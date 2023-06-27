@@ -1,5 +1,6 @@
 using CursedCastle.CodeBase.Factories;
 using CursedCastle.CodeBase.Infrastructure;
+using CursedCastle.CodeBase.StaticData;
 using CursedCastle.InputSystem;
 using UnityEngine;
 
@@ -8,16 +9,16 @@ namespace CursedCastle.CodeBase.Inventory
     public class InventoryService : MonoBehaviour
     {
         [SerializeField] private GameObject _itemPref;
-        [SerializeField] private GameObject _inventoryPref;
-
-        [SerializeField] private Transform HUD;
+        [SerializeField] private Transform _placeForItems;
         private IInventoryRepository _repository;
         private StarterAssetsInputs _input;
         private bool _isOpen;
 
-        private Transform inventoryTransform;
         private IUIFactory _uiFactory;
         private GameObject _inventory;
+        private InventoryRepository _inventoryRepository;
+        public Sprite _sprite; // Delete it
+        private InventoryUI _inventoryUI;
 
         public void Construct(IUIFactory uiFactory)
         {
@@ -27,6 +28,7 @@ namespace CursedCastle.CodeBase.Inventory
         {
             _input = AllServices.Container.Single<IInputService>().StarterAssetsInputs;
             _input.OnInventoryInteraction += Interaction;
+            _inventoryRepository = new InventoryRepository();
         }
 
         private void OnDestroy()
@@ -49,25 +51,45 @@ namespace CursedCastle.CodeBase.Inventory
 
             _isOpen = true;
             _inventory = _uiFactory.CreateInventory();
+            _inventoryUI = _inventory.GetComponent<InventoryUI>();
+            _placeForItems = _inventoryUI._placeForItems;
+            CreateItems(_repository, _placeForItems);
         }
 
-        private void CreateInventoryItems(IInventoryRepository repository, Transform inventory)
+        private void Update()
         {
-            for (int i = 0; i < _repository.Items.Count; i++)
+            if (_input.jump)
             {
-                CreateInventoryItem(repository.Items[i], inventory);
+                if(!_isOpen)
+                    return;
+                CreateItem(new ItemModel("Label", _sprite), _placeForItems);
             }
         }
 
-        private void CreateInventoryItem(IInventoryItem repositoryItem, Transform inventory)
+        private void CreateItems(IInventoryRepository repository, Transform placeForItems)
         {
-            Instantiate(_itemPref, inventoryTransform);
+            for (int i = 0; i < _repository.Items.Count; i++)
+            {
+                CreateItem(repository.Items[i], placeForItems);
+            }
+        }
+
+        private void CreateItem(IItemModel model, Transform placeForItem)
+        {
+            GameObject item = Instantiate(_itemPref, placeForItem);
+            InventoryItem inventoryItem = item.GetComponent<InventoryItem>();
+            inventoryItem.Construct(model);
         }
 
         private void Close()
         {
             GameObject.Destroy(_inventory);
             _isOpen = false;
+        }
+
+        public void AddItem(LootTypeID lootTypeID)
+        {
+            // UpdateInventory();
         }
 
     }

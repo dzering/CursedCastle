@@ -2,42 +2,39 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="020a9fbc-c8e6-48b0-8029-e4ffede58188" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/CursedCastle/CodeBase/Factories/IGameFactory.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CursedCastle/CodeBase/Factories/IGameFactory.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CursedCastle/CodeBase/Factories/IUIFactory.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CursedCastle/CodeBase/Factories/IUIFactory.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CursedCastle/CodeBase/Game.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CursedCastle/CodeBase/Game.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CursedCastle/CodeBase/Infrastructure.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CursedCastle/CodeBase/Infrastructure/AllServices.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CursedCastle/CodeBase/Infrastructure/AllServices.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CursedCastle/CodeBase/Infrastructure/BootstrapState.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CursedCastle/CodeBase/Infrastructure/BootstrapState.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CursedCastle/CodeBase/Infrastructure/IInputService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CursedCastle/CodeBase/Infrastructure/IInputService.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CursedCastle/CodeBase/Infrastructure/IService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CursedCastle/CodeBase/Infrastructure/IService.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CursedCastle/CodeBase/Inventory/IInventoryItem.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CursedCastle/CodeBase/Inventory/IInventoryItem.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CursedCastle/CodeBase/Inventory/IInventoryRepository.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CursedCastle/CodeBase/Inventory/IInventoryRepository.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CursedCastle/CodeBase/Inventory/InventoryRepository.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CursedCastle/CodeBase/Inventory/InventoryRepository.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CursedCastle/CodeBase/Inventory/InventoryService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CursedCastle/CodeBase/Inventory/InventoryService.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CursedCastle/CodeBase/LoadLevelState.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CursedCastle/CodeBase/LoadLevelState.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/CursedCastle/CodeBase/InventorySystem/IInventoryRepository.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/CursedCastle/CodeBase/InventorySystem/IItemModel.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/CursedCastle/CodeBase/InventorySystem/IItemModel.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/CursedCastle/CodeBase/InventorySystem/InventoryItem.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/CursedCastle/CodeBase/InventorySystem/InventoryRepository.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/CursedCastle/CodeBase/InventorySystem/InventoryUI.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/CursedCastle/CodeBase/InventorySystem/ItemModel.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/CursedCastle/CodeBase/InventorySystem/ItemModel.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/CursedCastle/CodeBase/Loot.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/CursedCastle/CodeBase/StaticData.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/CursedCastle/CodeBase/StaticData/StaticData.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/CursedCastle/CodeBase/StaticData/StaticData.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.CursedCastle/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CursedCastle/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CursedCastle/CodeBase/Factories/UIFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CursedCastle/CodeBase/Factories/UIFactory.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CursedCastle/CodeBase/Inventory.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CursedCastle/CodeBase/InventorySystem.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CursedCastle/CodeBase/Inventory/IInventoryItem.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CursedCastle/CodeBase/Inventory/IInventoryItem.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CursedCastle/CodeBase/Inventory/IInventoryRepository.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CursedCastle/CodeBase/Inventory/IInventoryRepository.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CursedCastle/CodeBase/InventorySystem/IInventoryRepository.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CursedCastle/CodeBase/Inventory/InventoryItem.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CursedCastle/CodeBase/Inventory/InventoryItem.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CursedCastle/CodeBase/InventorySystem/InventoryItem.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CursedCastle/CodeBase/Inventory/InventoryRepository.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CursedCastle/CodeBase/Inventory/InventoryRepository.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CursedCastle/CodeBase/InventorySystem/InventoryRepository.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CursedCastle/CodeBase/Inventory/InventoryService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CursedCastle/CodeBase/InventorySystem/InventoryService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CursedCastle/CodeBase/Inventory/InventoryService.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CursedCastle/CodeBase/InventorySystem/InventoryService.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CursedCastle/Resources/Character.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CursedCastle/Resources/Character.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CursedCastle/Resources/UI/Inventory.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CursedCastle/Resources/UI/Inventory.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CursedCastle/Resources/UI/UiRoot.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CursedCastle/Resources/UI/UiRoot.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CursedCastle/Scenes/New Scene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CursedCastle/Scenes/New Scene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/InventoryUI.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/InventoryUI.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CursedCastle/CodeBase/InventorySystem/InventoryUI.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/DynamicsManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/DynamicsManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,11 +42,14 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/CursedCastle/CodeBase/Character/LootCollector.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/CursedCastle/CodeBase/Factories/GameFactory.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/CursedCastle/CodeBase/Factories/UIFactory.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/CursedCastle/CodeBase/GameBootstrapper.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/CursedCastle/CodeBase/Inventory/InventoryItem.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/CursedCastle/CodeBase/InventorySystem/InventoryItem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/CursedCastle/CodeBase/PlayerRotation.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/CursedCastle/CodeBase/StaticData/StaticDataService.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.inputsystem@1.4.4/InputSystem/Actions/InputAction.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.inputsystem@1.4.4/InputSystem/Plugins/PlayerInput/InputValue.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.inputsystem@1.4.4/InputSystem/Plugins/PlayerInput/PlayerInput.cs" root0="SKIP_HIGHLIGHTING" />
@@ -111,10 +111,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="184">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" />
+      <option name="pid" value="184" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -133,7 +133,7 @@
       <workItem from="1687537805491" duration="13000" />
       <workItem from="1687595924227" duration="24352000" />
       <workItem from="1687675881341" duration="8832000" />
-      <workItem from="1687711604929" duration="6907000" />
+      <workItem from="1687711604929" duration="21432000" />
     </task>
     <servers />
   </component>
@@ -149,30 +149,17 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/CursedCastle/CodeBase/Infrastructure/AllServices.cs</url>
-          <line>8</line>
-          <properties documentPath="$PROJECT_DIR$/Assets/CursedCastle/CodeBase/Infrastructure/AllServices.cs" initialLine="8" containingFunctionPresentation="method 'RegisterSingle'">
+          <url>file://$PROJECT_DIR$/Assets/CursedCastle/CodeBase/Character/LootCollector.cs</url>
+          <line>14</line>
+          <properties documentPath="$PROJECT_DIR$/Assets/CursedCastle/CodeBase/Character/LootCollector.cs" initialLine="14" containingFunctionPresentation="method 'OnTriggerEnter'">
             <startOffsets>
-              <option value="331" />
+              <option value="402" />
             </startOffsets>
             <endOffsets>
-              <option value="388" />
+              <option value="403" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="9" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/CursedCastle/CodeBase/Infrastructure/AllServices.cs</url>
-          <line>11</line>
-          <properties documentPath="$PROJECT_DIR$/Assets/CursedCastle/CodeBase/Infrastructure/AllServices.cs" initialLine="11" containingFunctionPresentation="method 'Single'">
-            <startOffsets>
-              <option value="476" />
-            </startOffsets>
-            <endOffsets>
-              <option value="516" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="10" />
+          <option name="timeStamp" value="14" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

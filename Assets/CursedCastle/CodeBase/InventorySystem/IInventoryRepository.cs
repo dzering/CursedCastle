@@ -1,13 +1,13 @@
 using System.Collections.Generic;
 
-namespace CursedCastle.CodeBase.Inventory
+namespace CursedCastle.CodeBase.InventorySystem
 {
     public interface IInventoryRepository
     {
-        void AddItem(IItemModel itemBase);
-        void RemoveItem(IItemModel itemBase);
-        void SelectItem(IItemModel itemBase);
-        void DeselectItem(IItemModel itemBase);
-        IReadOnlyList<IItemModel> Items { get; }
+        void AddItem(IItem item);
+        void RemoveItem(IItem item);
+        void SelectItem(IItem itemBase);
+        void DeselectItem(IItem itemBase);
+        IReadOnlyList<IItem> Items { get; }
     }
 }

@@ -1,4 +1,5 @@
 using CursedCastle.CodeBase.Factories;
+using CursedCastle.CodeBase.StaticData;
 using CursedCastle.InputSystem;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -21,12 +22,21 @@ namespace CursedCastle.CodeBase.Infrastructure
         private void RegisterService()
         {
             RegisterInputService();
-            _allServices.RegisterSingle<IUIFactory>(new UIFactory());
+            RegisterStaticData();
+            _allServices.RegisterSingle<IUIFactory>(new UIFactory(
+                _allServices.Single<IStaticDataService>()));
             _allServices.RegisterSingle<IGameFactory>(new GameFactory(
                 _allServices.Single<IUIFactory>(),_allServices.Single<IInputService>()));
         }
 
-        
+        private void RegisterStaticData()
+        {
+            IStaticDataService staticDataService = new StaticDataService();
+            staticDataService.LoadLoot();
+            _allServices.RegisterSingle<IStaticDataService>(staticDataService);
+        }
+
+
         private void RegisterInputService()
         {
             StarterAssetsInputs input = _inputSystem.GetComponent<StarterAssetsInputs>();

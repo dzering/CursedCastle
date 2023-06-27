@@ -1,6 +1,6 @@
 using Cinemachine;
 using CursedCastle.CodeBase.Infrastructure;
-using CursedCastle.CodeBase.Inventory;
+using CursedCastle.CodeBase.InventorySystem;
 using StarterAssets.ThirdPersonController.Scripts;
 using UnityEngine;
 

@@ -1,28 +1,28 @@
 using System.Collections.Generic;
 
-namespace CursedCastle.CodeBase.Inventory
+namespace CursedCastle.CodeBase.InventorySystem
 {
     public class InventoryRepository : IInventoryRepository
     {
-        private List<IItemModel> _items;
-        public IReadOnlyList<IItemModel> Items => _items;
+        private readonly List<IItem> _items = new List<IItem>();
+        public IReadOnlyList<IItem> Items => _items;
 
-        public void AddItem(IItemModel itemBase)
+        public void AddItem(IItem item)
         {
-            _items.Add(itemBase);
+            _items.Add(item);
         }
 
-        public void RemoveItem(IItemModel itemBase)
+        public void RemoveItem(IItem item)
         {
-            _items.Remove(itemBase);
+            _items.Remove(item);
         }
 
-        public void SelectItem(IItemModel itemBase)
+        public void SelectItem(IItem itemBase)
         {
             
         }
 
-        public void DeselectItem(IItemModel itemBase)
+        public void DeselectItem(IItem itemBase)
         {
         }
 

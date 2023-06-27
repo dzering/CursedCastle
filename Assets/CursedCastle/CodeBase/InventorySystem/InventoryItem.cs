@@ -1,21 +1,19 @@
-using CursedCastle.CodeBase.StaticData;
+using CursedCastle.CodeBase.Loot;
 using TMPro;
 using UnityEngine;
-using UnityEngine.Serialization;
 using UnityEngine.UI;
 
-namespace CursedCastle.CodeBase.Inventory
+namespace CursedCastle.CodeBase.InventorySystem
 {
     public class InventoryItem : MonoBehaviour
     {
-        public LootTypeID LootTypeID; 
-        [SerializeField] private TextMeshProUGUI _name;
+        [HideInInspector] public LootTypeID LootTypeID; 
         [SerializeField] private Image _image;
 
-        public void Construct(IItemModel item)
+        public void Construct(LootTypeID lootTypeID, Sprite sprite)
         {
-            _name.text = item.Name;
-            _image.sprite = item.Sprite;
+            LootTypeID = lootTypeID;
+            _image.sprite = sprite;
         }
     }
 }

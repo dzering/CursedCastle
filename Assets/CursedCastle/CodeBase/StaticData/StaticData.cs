@@ -1,4 +1,6 @@
+using CursedCastle.CodeBase.Loot;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 namespace CursedCastle.CodeBase.StaticData
@@ -7,7 +9,7 @@ namespace CursedCastle.CodeBase.StaticData
     public class LootStaticData : ScriptableObject
     {
         public LootTypeID LootID;
-        public Image Image;
+        public Sprite Sprite;
         public GameObject prefab;
     }
 }

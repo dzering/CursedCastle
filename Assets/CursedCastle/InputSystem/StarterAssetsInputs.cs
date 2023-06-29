@@ -14,13 +14,16 @@ namespace CursedCastle.InputSystem
 		public Vector2 look;
 		public bool jump;
 		public bool sprint;
+		public bool isInventory;
 
 		[Header("Movement Settings")]
 		public bool analogMovement;
 
 		[Header("Mouse Cursor Settings")]
+		
 		public bool cursorLocked = true;
 		public bool cursorInputForLook = true;
+		
 
 #if ENABLE_INPUT_SYSTEM
 		public void OnMove(InputValue value)
@@ -49,6 +52,8 @@ namespace CursedCastle.InputSystem
 		public void OnInventory()
 		{
 			OnInventoryInteraction?.Invoke();
+			isInventory = !isInventory;
+			OnUIFocus(isInventory);
 		}
 #endif
 
@@ -73,6 +78,17 @@ namespace CursedCastle.InputSystem
 			sprint = newSprintState;
 		}
 
+		public void OnUIFocus(bool hasUI)
+		{
+			SetCursorState(!hasUI);
+			SetCursorVisible(hasUI);
+		}
+
+		private static void SetCursorVisible(bool hasUI)
+		{
+			Cursor.visible = hasUI;
+		}
+
 		private void OnApplicationFocus(bool hasFocus)
 		{
 			SetCursorState(cursorLocked);
@@ -82,5 +98,6 @@ namespace CursedCastle.InputSystem
 		{
 			Cursor.lockState = newState ? CursorLockMode.Locked : CursorLockMode.None;
 		}
+
 	}
 }

@@ -2,27 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="020a9fbc-c8e6-48b0-8029-e4ffede58188" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/CursedCastle/CodeBase/InventorySystem/UiInventory.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CursedCastle/CodeBase/StaticData/IStaticDataService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CursedCastle/CodeBase/StaticData/IStaticDataService.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.CursedCastle/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CursedCastle/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CursedCastle/CodeBase/Factories/GameFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CursedCastle/CodeBase/Factories/GameFactory.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CursedCastle/CodeBase/Factories/IUIFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CursedCastle/CodeBase/Factories/IUIFactory.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CursedCastle/CodeBase/Factories/UIFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CursedCastle/CodeBase/Factories/UIFactory.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CursedCastle/CodeBase/Infrastructure/BootstrapState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CursedCastle/CodeBase/Infrastructure/BootstrapState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CursedCastle/CodeBase/InventorySystem/IInventoryRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CursedCastle/CodeBase/InventorySystem/IInventoryRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CursedCastle/CodeBase/InventorySystem/IItemModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CursedCastle/CodeBase/InventorySystem/IItem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CursedCastle/CodeBase/InventorySystem/IItemModel.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CursedCastle/CodeBase/InventorySystem/IItem.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CursedCastle/CodeBase/InventorySystem/InventoryItem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CursedCastle/CodeBase/InventorySystem/InventoryItem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CursedCastle/CodeBase/InventorySystem/InventoryRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CursedCastle/CodeBase/InventorySystem/InventoryRepository.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/CursedCastle/CodeBase/InventorySystem/InventoryService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CursedCastle/CodeBase/InventorySystem/InventoryService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CursedCastle/CodeBase/InventorySystem/InventoryUI.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CursedCastle/CodeBase/InventorySystem/InventoryUI.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CursedCastle/CodeBase/InventorySystem/ItemModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CursedCastle/CodeBase/InventorySystem/Item.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CursedCastle/CodeBase/InventorySystem/ItemModel.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CursedCastle/CodeBase/InventorySystem/Item.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CursedCastle/CodeBase/StaticData/StaticData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CursedCastle/CodeBase/StaticData/StaticData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CursedCastle/InputSystem/StarterAssetsInputs.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CursedCastle/InputSystem/StarterAssetsInputs.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CursedCastle/Resources/Character.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CursedCastle/Resources/Character.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/CursedCastle/Resources/UI/Inventory.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CursedCastle/Resources/UI/Inventory.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CursedCastle/Scenes/New Scene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CursedCastle/Scenes/New Scene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -106,10 +90,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="7065">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="7065" />
+      <option name="pid" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -129,7 +113,8 @@
       <workItem from="1687595924227" duration="24352000" />
       <workItem from="1687675881341" duration="8832000" />
       <workItem from="1687711604929" duration="23490000" />
-      <workItem from="1687883446360" duration="7508000" />
+      <workItem from="1687883446360" duration="8477000" />
+      <workItem from="1688055022085" duration="3416000" />
     </task>
     <servers />
   </component>

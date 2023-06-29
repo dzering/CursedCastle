@@ -17,10 +17,9 @@ namespace CursedCastle.CodeBase.InventorySystem
         private GameObject _inventory;
         private UiInventory _uiInventory;
 
-        public void Construct(IUIFactory uiFactory)
-        {
+        public void Construct(IUIFactory uiFactory) => 
             _uiFactory = uiFactory;
-        }
+
         private void Start()
         {
             _input = AllServices.Container.Single<IInputService>().StarterAssetsInputs;
@@ -51,6 +50,12 @@ namespace CursedCastle.CodeBase.InventorySystem
             CreateItems(_repository, uiPlaceForItems);
         }
 
+        private void Close()
+        {
+            Destroy(_inventory);
+            _isOpen = false;
+        }
+
         private void CreateItems(IInventoryRepository repository, Transform placeForItems)
         {
             if(_repository.Items.Count == 0)
@@ -64,12 +69,6 @@ namespace CursedCastle.CodeBase.InventorySystem
         {
             LootTypeID lootTypeID = item.LootTypeID;
             _uiFactory.CreateInventoryItem(lootTypeID, placeForItem);
-        }
-
-        private void Close()
-        {
-            Destroy(_inventory);
-            _isOpen = false;
         }
 
         public void AddItem(IItem item)

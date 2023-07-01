@@ -24,20 +24,25 @@ namespace CursedCastle.CodeBase.Factories
             _uiRoot = Object.Instantiate(uiRootPref).transform;
         }
 
-        public void CreateInventoryItem(LootTypeID lootTypeID, Transform placeFor)
+        public void CreateInventoryItem(LootTypeID lootTypeID, InventoryUi inventoryUi)
         {
             LootStaticData loot = _staticDataService.ForLoot(lootTypeID);
             GameObject itemPref = Resources.Load<GameObject>(ITEM_PATH);
-            GameObject item = GameObject.Instantiate(itemPref, placeFor);
-            InventoryItem inventoryItem = item.GetComponent<InventoryItem>();
-            inventoryItem.Construct(loot.LootID, loot.Sprite);
+            GameObject item = GameObject.Instantiate(itemPref, inventoryUi.PlaceForItems);
+            InventoryItemUI inventoryItemUI = item.GetComponentInParent<InventoryItemUI>();
+            inventoryItemUI.Construct(loot.LootID, loot.Sprite, inventoryUi);
         }
         
 
-        public GameObject CreateInventory()
+        public GameObject CreateInventory(InventoryService inventoryService)
         {
-            GameObject inventory = Resources.Load<GameObject>(INVENTORY_PATH);
-            return Object.Instantiate(inventory, _uiRoot);
+            GameObject inventoryPref = Resources.Load<GameObject>(INVENTORY_PATH);
+            GameObject inventoryGO = Object.Instantiate(inventoryPref, _uiRoot);
+
+            DropButton dropButton = inventoryGO.GetComponentInChildren<DropButton>();
+            dropButton.Construct(inventoryService);
+            
+            return inventoryGO;
         }
     }
 }

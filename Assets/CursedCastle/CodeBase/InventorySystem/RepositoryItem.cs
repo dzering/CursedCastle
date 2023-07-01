@@ -3,11 +3,11 @@ using UnityEngine;
 
 namespace CursedCastle.CodeBase.InventorySystem
 {
-    public class Item : IItem
+    public class RepositoryItem : IItem
     {
         public LootTypeID LootTypeID { get; }
 
-        public Item(LootTypeID lootTypeID)
+        public RepositoryItem(LootTypeID lootTypeID)
         {
             LootTypeID = lootTypeID;
         }

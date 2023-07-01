@@ -1,9 +1,11 @@
+using System;
 using CursedCastle.CodeBase.Factories;
 using CursedCastle.CodeBase.Infrastructure;
 using CursedCastle.CodeBase.Loot;
-using CursedCastle.CodeBase.StaticData;
 using CursedCastle.InputSystem;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace CursedCastle.CodeBase.InventorySystem
 {
@@ -15,7 +17,7 @@ namespace CursedCastle.CodeBase.InventorySystem
 
         private IUIFactory _uiFactory;
         private GameObject _inventory;
-        private UiInventory _uiInventory;
+        [HideInInspector] public InventoryUi InventoryUi;
 
         public void Construct(IUIFactory uiFactory) => 
             _uiFactory = uiFactory;
@@ -44,9 +46,9 @@ namespace CursedCastle.CodeBase.InventorySystem
                 return;
 
             _isOpen = true;
-            _inventory = _uiFactory.CreateInventory();
-            _uiInventory = _inventory.GetComponent<UiInventory>();
-            Transform uiPlaceForItems = _uiInventory.PlaceForItems;
+            _inventory = _uiFactory.CreateInventory(this);
+            InventoryUi = _inventory.GetComponent<InventoryUi>();
+            Transform uiPlaceForItems = InventoryUi.PlaceForItems;
             CreateItems(_repository, uiPlaceForItems);
         }
 
@@ -68,7 +70,7 @@ namespace CursedCastle.CodeBase.InventorySystem
         private void CreateItem(IItem item, Transform placeForItem)
         {
             LootTypeID lootTypeID = item.LootTypeID;
-            _uiFactory.CreateInventoryItem(lootTypeID, placeForItem);
+            _uiFactory.CreateInventoryItem(lootTypeID, InventoryUi);
         }
 
         public void AddItem(IItem item)
@@ -76,5 +78,11 @@ namespace CursedCastle.CodeBase.InventorySystem
             _repository.AddItem(item);
         }
 
+        public void Drop()
+        {
+            InventoryItemUI selectedItem = InventoryUi.SelectedItem;
+            Destroy(selectedItem.gameObject);
+        }
+        public void Take(){}
     }
 }

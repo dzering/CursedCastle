@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4004106567504669261}
   - component: {fileID: 5981483371055545385}
   - component: {fileID: 8469916783104377422}
+  - component: {fileID: 2185967435303574935}
   m_Layer: 5
   m_Name: Drop_Button
   m_TagString: Untagged
@@ -122,6 +123,19 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &2185967435303574935
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 464630520389484883}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 649cb51d8c0148c7bf5a8b16201a17e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _dropButton: {fileID: 8469916783104377422}
 --- !u!1 &676662985775173944
 GameObject:
   m_ObjectHideFlags: 0

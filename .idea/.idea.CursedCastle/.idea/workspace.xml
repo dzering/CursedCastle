@@ -2,20 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="020a9fbc-c8e6-48b0-8029-e4ffede58188" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/CursedCastle/CodeBase/InventorySystem/DropButton.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CursedCastle/CodeBase/InventorySystem/DropButton.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CursedCastle/CodeBase/InventorySystem/IInventoryUi.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CursedCastle/CodeBase/InventorySystem/IInventoryUi.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/CursedCastle/CodeBase/Character/SelectionObject.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/CursedCastle/CodeBase/Character/SelectionObject.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.CursedCastle/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CursedCastle/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CursedCastle/CodeBase/Factories/IUIFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CursedCastle/CodeBase/Factories/IUIFactory.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CursedCastle/CodeBase/Factories/UIFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CursedCastle/CodeBase/Factories/UIFactory.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CursedCastle/CodeBase/InventorySystem/InventoryItem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CursedCastle/CodeBase/InventorySystem/InventoryItemUI.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CursedCastle/CodeBase/InventorySystem/InventoryItem.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CursedCastle/CodeBase/InventorySystem/InventoryItemUI.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CursedCastle/CodeBase/InventorySystem/InventoryService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CursedCastle/CodeBase/InventorySystem/InventoryService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CursedCastle/CodeBase/InventorySystem/Item.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CursedCastle/CodeBase/InventorySystem/RepositoryItem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CursedCastle/CodeBase/InventorySystem/Item.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CursedCastle/CodeBase/InventorySystem/RepositoryItem.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CursedCastle/CodeBase/InventorySystem/UiInventory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CursedCastle/CodeBase/InventorySystem/InventoryUi.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CursedCastle/Resources/UI/Inventory.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CursedCastle/Resources/UI/Inventory.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CursedCastle/Scenes/New Scene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CursedCastle/Scenes/New Scene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,6 +14,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/386b3655d5024dcd9aa1cc28a30c519f3d000/ff/c1006b87/ISelectable.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/4ba27aa039714eafa1e8892e51af2932469200/68/b4962842/NullReferenceException.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/77a2aeb037a94120acedd426fed720aa3a00/d1/0b952a98/NativeInputSystem.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/CursedCastle/CodeBase/Factories/GameFactory.cs" root0="FORCE_HIGHLIGHTING" />
@@ -123,7 +115,7 @@
       <workItem from="1687711604929" duration="23490000" />
       <workItem from="1687883446360" duration="8477000" />
       <workItem from="1688055022085" duration="6499000" />
-      <workItem from="1688103378823" duration="5831000" />
+      <workItem from="1688103378823" duration="13524000" />
     </task>
     <servers />
   </component>

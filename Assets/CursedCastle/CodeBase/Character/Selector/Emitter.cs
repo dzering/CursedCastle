@@ -1,33 +1,16 @@
 using System;
+using CursedCastle.CodeBase.InventorySystem;
 using UnityEngine;
 using UnityEngine.PlayerLoop;
 
 namespace CursedCastle.CodeBase.Character.Selector
 {
-    public class Emitter : MonoBehaviour, ISwitchable
+    public class Emitter : MonoBehaviour, IInteractable
     {
         [SerializeField] private float maxDistance;
         [SerializeField] private LayerMask layerMask;
         private RaycastHit _hit;
         private bool _isEmitting;
-
-        private void Start() =>
-            SwitchOn();
-
-        public void SwitchOn() =>
-            _isEmitting = true;
-
-
-        public void SwitchOff() =>
-            _isEmitting = false;
-
-        private void Update()
-        {
-            if (!_isEmitting)
-                return;
-
-            Raycasting();
-        }
 
         private bool Raycasting()
         {
@@ -41,6 +24,11 @@ namespace CursedCastle.CodeBase.Character.Selector
             }
 
             return isRaycast;
+        }
+
+        public void Interact()
+        {
+            Raycasting();
         }
     }
 }

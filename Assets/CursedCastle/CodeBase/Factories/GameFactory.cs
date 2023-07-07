@@ -44,17 +44,14 @@ namespace CursedCastle.CodeBase.Factories
             return character;
         }
 
-        public void CreateVmCamera(GameObject target)
+        public GameObject CreateVmCamera(GameObject target)
         {
             GameObject pref = Resources.Load<GameObject>(CAMERA_PATH);
             GameObject cameraGameObject = Object.Instantiate(pref);
-
-            Emitter emitter = _gameElementsFactory.CreateEmitter(cameraGameObject.transform);
-            emitter.transform.localPosition = new Vector3(0, 0.5f, 0);
-
             CinemachineVirtualCamera vcamera = cameraGameObject.GetComponent<CinemachineVirtualCamera>();
             vcamera.Follow = target.transform;
             vcamera.LookAt = target.transform;
+            return cameraGameObject;
         }
     }
 }

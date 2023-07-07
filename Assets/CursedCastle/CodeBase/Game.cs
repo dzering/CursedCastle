@@ -16,7 +16,7 @@ namespace CursedCastle.CodeBase
             _services = services;
             Initialize();
             _loadLevelState = new LoadLevelState(_services.Single<IUIFactory>(),
-                _services.Single<IGameFactory>());
+                _services.Single<IGameFactory>(), _services.Single<IGameElementsFactory>());
         }
         
         private void Initialize()

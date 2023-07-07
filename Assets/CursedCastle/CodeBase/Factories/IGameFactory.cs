@@ -7,6 +7,6 @@ namespace CursedCastle.CodeBase.Factories
     {
         GameObject CreateInputSystem();
         GameObject CreateCharacter();
-        void CreateVmCamera(GameObject target);
+        GameObject CreateVmCamera(GameObject target);
     }
 }

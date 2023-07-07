@@ -1,4 +1,6 @@
+using CursedCastle.CodeBase.Character.Selector;
 using CursedCastle.CodeBase.Factories;
+using CursedCastle.CodeBase.InventorySystem;
 using UnityEngine;
 
 namespace CursedCastle.CodeBase
@@ -7,11 +9,14 @@ namespace CursedCastle.CodeBase
     {
         private readonly IUIFactory _uiFactory;
         private readonly IGameFactory _gameFactory;
+        private readonly IGameElementsFactory _gameElementsFactory;
 
-        public LoadLevelState(IUIFactory uiFactory, IGameFactory gameFactory)
+        public LoadLevelState(IUIFactory uiFactory, IGameFactory gameFactory, IGameElementsFactory gameElementsFactory)
         {
             _uiFactory = uiFactory;
             _gameFactory = gameFactory;
+            _gameElementsFactory = gameElementsFactory;
+            
             InitGameWorld();
         }
 
@@ -19,7 +24,11 @@ namespace CursedCastle.CodeBase
         {
             _uiFactory.CreateUiRoot();
             GameObject character = _gameFactory.CreateCharacter();
-            _gameFactory.CreateVmCamera(character);
+            GameObject vmCamera = _gameFactory.CreateVmCamera(character);
+
+            Emitter emitter = _gameElementsFactory.CreateEmitter(vmCamera.transform);
+            TriggerObserve observe = character.GetComponentInChildren<TriggerObserve>();
+            observe.TriggeringStay += emitter.Interact;
         }
     }
 }

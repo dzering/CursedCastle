@@ -42,9 +42,9 @@ GameObject:
   m_Component:
   - component: {fileID: 3872707228121821129}
   - component: {fileID: 1109277997436076157}
-  - component: {fileID: 5414763949659600361}
+  - component: {fileID: 4512913342198180628}
   m_Layer: 7
-  m_Name: LootCollector
+  m_Name: TriggerObserve
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -59,7 +59,7 @@ Transform:
   m_GameObject: {fileID: 81154530191113987}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1.2733, z: 1.6383}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6165738671988909506}
@@ -79,7 +79,7 @@ CapsuleCollider:
   m_Height: 2.3060927
   m_Direction: 1
   m_Center: {x: 0, y: 0.65304637, z: 0.34801006}
---- !u!114 &5414763949659600361
+--- !u!114 &4512913342198180628
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -88,7 +88,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 81154530191113987}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ffe6a3a75c544454fa587c5bf274166d, type: 3}
+  m_Script: {fileID: 11500000, guid: 347166ec7f41454a90ef40e452817230, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &83846971799240071
@@ -2018,7 +2018,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &248039322512818104
 Animator:
-  serializedVersion: 5
+  serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -2035,7 +2035,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!143 &6834997533139926898
 CharacterController:
   m_ObjectHideFlags: 0
@@ -2139,6 +2139,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccd61061bcaf4ff58a315c75c278e563, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  InventoryUi: {fileID: 0}
 --- !u!1 &6905982470484977067
 GameObject:
   m_ObjectHideFlags: 0

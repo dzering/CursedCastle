@@ -25,8 +25,11 @@ namespace CursedCastle.CodeBase.Infrastructure
             RegisterStaticData();
             _allServices.RegisterSingle<IUIFactory>(new UIFactory(
                 _allServices.Single<IStaticDataService>()));
+            _allServices.RegisterSingle<IGameElementsFactory>(new GameElementsFactory());
             _allServices.RegisterSingle<IGameFactory>(new GameFactory(
-                _allServices.Single<IUIFactory>(),_allServices.Single<IInputService>()));
+                _allServices.Single<IUIFactory>(),
+                _allServices.Single<IGameElementsFactory>(),
+                _allServices.Single<IInputService>()));
         }
 
         private void RegisterStaticData()

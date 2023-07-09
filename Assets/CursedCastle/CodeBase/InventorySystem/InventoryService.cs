@@ -1,11 +1,8 @@
-using System;
 using CursedCastle.CodeBase.Factories;
 using CursedCastle.CodeBase.Infrastructure;
 using CursedCastle.CodeBase.Loot;
 using CursedCastle.InputSystem;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace CursedCastle.CodeBase.InventorySystem
 {

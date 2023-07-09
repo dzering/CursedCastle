@@ -1,7 +1,4 @@
-using System;
-using System.Collections;
 using CursedCastle.CodeBase.Loot;
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 

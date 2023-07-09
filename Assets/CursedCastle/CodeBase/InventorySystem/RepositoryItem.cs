@@ -1,5 +1,4 @@
 using CursedCastle.CodeBase.Loot;
-using UnityEngine;
 
 namespace CursedCastle.CodeBase.InventorySystem
 {

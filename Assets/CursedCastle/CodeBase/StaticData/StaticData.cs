@@ -1,7 +1,5 @@
 using CursedCastle.CodeBase.Loot;
 using UnityEngine;
-using UnityEngine.Serialization;
-using UnityEngine.UI;
 
 namespace CursedCastle.CodeBase.StaticData
 {

@@ -1,5 +1,4 @@
 using Cinemachine;
-using CursedCastle.CodeBase.Character.Selector;
 using CursedCastle.CodeBase.Infrastructure;
 using CursedCastle.CodeBase.InventorySystem;
 using StarterAssets.ThirdPersonController.Scripts;

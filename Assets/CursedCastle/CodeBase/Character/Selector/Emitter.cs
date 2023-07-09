@@ -1,7 +1,5 @@
-using System;
 using CursedCastle.CodeBase.InventorySystem;
 using UnityEngine;
-using UnityEngine.PlayerLoop;
 
 namespace CursedCastle.CodeBase.Character.Selector
 {
@@ -9,26 +7,32 @@ namespace CursedCastle.CodeBase.Character.Selector
     {
         [SerializeField] private float maxDistance;
         [SerializeField] private LayerMask layerMask;
+        [SerializeField] private SelectableValue selectableValue;
         private RaycastHit _hit;
         private bool _isEmitting;
+
+        public void Interact()
+        {
+            Raycasting();
+        }
 
         private bool Raycasting()
         {
             bool isRaycast = Physics.Raycast(transform.position, transform.forward, out _hit, maxDistance, layerMask.value);
-            
+
             if (isRaycast)
+            {
+                ISelectable selectable = _hit.collider.GetComponentInParent<ISelectable>();
+                selectableValue.SetValue(selectable);
                 Debug.DrawRay(transform.position, transform.forward * _hit.distance, Color.green);
+            }
+            
             else
             {
                 Debug.DrawRay(transform.position, transform.forward * 1000, Color.red);
             }
 
             return isRaycast;
-        }
-
-        public void Interact()
-        {
-            Raycasting();
         }
     }
 }

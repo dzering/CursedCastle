@@ -1,4 +1,3 @@
-using CursedCastle.CodeBase.Character.Selector;
 using CursedCastle.CodeBase.Loot;
 using UnityEngine;
 

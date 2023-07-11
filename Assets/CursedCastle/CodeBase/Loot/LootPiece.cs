@@ -3,14 +3,22 @@ using UnityEngine;
 
 namespace CursedCastle.CodeBase.Loot
 {
-    public class LootPiece : MonoBehaviour, ISelectable
+    public class LootPiece : MonoBehaviour, ILoot
     {
-        public LootTypeID LootTypeID;
+        [SerializeField] private LootTypeID lootTypeID;
         public GameObject Model;
+
+        public LootTypeID LootTypeID => lootTypeID;
 
         public void PickUp()
         {
             Destroy(gameObject);
         }
+    }
+
+    public interface ILoot : ISelectable
+    {
+        LootTypeID LootTypeID { get; }
+        void PickUp();
     }
 }

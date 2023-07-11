@@ -642,7 +642,7 @@ GameObject:
   - component: {fileID: 1206127218}
   - component: {fileID: 1206127217}
   - component: {fileID: 1206127216}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -939,6 +939,7 @@ GameObject:
   - component: {fileID: 1456152530}
   - component: {fileID: 1456152529}
   - component: {fileID: 1456152528}
+  - component: {fileID: 1456152531}
   m_Layer: 8
   m_Name: Light_low
   m_TagString: Untagged
@@ -967,7 +968,6 @@ MeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: -2657010376462220785, guid: 29264dcda5b384851bd11bc9feb299be, type: 3}
-  - {fileID: 2100000, guid: b884609f11d898e4ab52bea8789f449e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1013,6 +1013,21 @@ Transform:
   m_Father: {fileID: 415883392}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1456152531
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1456152527}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70e7c019d261d9d4eb5a06df5fc0af7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  renderers:
+  - {fileID: 1456152528}
+  outlineMaterial: {fileID: 2100000, guid: b884609f11d898e4ab52bea8789f449e, type: 2}
 --- !u!1 &1458114441
 GameObject:
   m_ObjectHideFlags: 0

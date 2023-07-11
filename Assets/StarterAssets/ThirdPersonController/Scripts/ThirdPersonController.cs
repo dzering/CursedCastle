@@ -121,8 +121,7 @@ namespace StarterAssets.ThirdPersonController.Scripts
 #endif
             }
         }
-
-
+        
         public void Construct(IInputService inputService)
         {
             _input = inputService.StarterAssetsInputs;

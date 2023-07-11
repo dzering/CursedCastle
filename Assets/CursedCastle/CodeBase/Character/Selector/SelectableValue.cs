@@ -7,7 +7,7 @@ namespace CursedCastle.CodeBase.Character.Selector
     public class SelectableValue : ScriptableObject
     {
         public ISelectable CurrentValue { get; private set; }
-        private Action<ISelectable> OnSelected;
+        public Action<ISelectable> OnSelected;
 
         public void SetValue(ISelectable selectable)
         {

@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3166395422640922011}
   - component: {fileID: 1481614194148253198}
+  - component: {fileID: -5498759474996895753}
   m_Layer: 0
   m_Name: Emitter
   m_TagString: Untagged
@@ -48,3 +49,17 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 64
+  selectableValue: {fileID: 11400000, guid: 4395e80f4fb60c14a9bb2f99d56f99c4, type: 2}
+--- !u!114 &-5498759474996895753
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4359215570154773888}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3eaded0f494f4e2981d173b77653c2f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _selectable: {fileID: 11400000, guid: 4395e80f4fb60c14a9bb2f99d56f99c4, type: 2}

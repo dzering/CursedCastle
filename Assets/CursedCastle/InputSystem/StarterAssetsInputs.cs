@@ -7,6 +7,7 @@ namespace CursedCastle.InputSystem
 	public class StarterAssetsInputs : MonoBehaviour
 	{
 		public event Action OnInventoryInteraction;
+		public event Action OnPickUpObject;
 
 		[Header("Character Input Values")]
 		public Vector2 move;
@@ -54,6 +55,11 @@ namespace CursedCastle.InputSystem
 			OnInventoryInteraction?.Invoke();
 			isInventory = !isInventory;
 			OnUIFocus(isInventory);
+		}
+
+		public void OnPickUp()
+		{
+			OnPickUpObject?.Invoke();
 		}
 #endif
 

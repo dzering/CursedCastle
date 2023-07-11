@@ -1,4 +1,5 @@
 using Cinemachine;
+using CursedCastle.CodeBase.Character;
 using CursedCastle.CodeBase.Infrastructure;
 using CursedCastle.CodeBase.InventorySystem;
 using StarterAssets.ThirdPersonController.Scripts;
@@ -40,6 +41,10 @@ namespace CursedCastle.CodeBase.Factories
 
             InventoryService inventoryService = character.GetComponentInChildren<InventoryService>();
             inventoryService.Construct(_uiFactory);
+
+            PickUpLootAbility pickUpLootAbility = character.GetComponentInParent<PickUpLootAbility>();
+            pickUpLootAbility.Construct(_inputService);
+
             return character;
         }
 

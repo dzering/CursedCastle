@@ -15,9 +15,13 @@ namespace CursedCastle.CodeBase.InventorySystem
         private IUIFactory _uiFactory;
         private GameObject _inventory;
         [HideInInspector] public InventoryUi InventoryUi;
+        private GameFactory _gameFactory;
 
-        public void Construct(IUIFactory uiFactory) => 
+        public void Construct(GameFactory gameFactory, IUIFactory uiFactory)
+        {
+            _gameFactory = gameFactory;
             _uiFactory = uiFactory;
+        }
 
         private void Start()
         {
@@ -29,6 +33,20 @@ namespace CursedCastle.CodeBase.InventorySystem
         private void OnDestroy() => 
             _input.OnInventoryInteraction -= Interaction;
 
+        public void AddItem(IItem item)
+        {
+            _repository.AddItem(item);
+        }
+
+        public void RemoveItem()
+        {
+            InventoryItemUI selectedItem = InventoryUi.SelectedItem;
+            _repository.RemoveItem(selectedItem);
+            LootTypeID lootTypeID = selectedItem.LootTypeID;
+            _gameFactory.CreateLoot(lootTypeID, transform);
+            Destroy(selectedItem.gameObject);
+            
+        }
         private void Interaction()
         {
             if (!_isOpen)
@@ -70,16 +88,6 @@ namespace CursedCastle.CodeBase.InventorySystem
             _uiFactory.CreateInventoryItem(lootTypeID, InventoryUi);
         }
 
-        public void AddItem(IItem item)
-        {
-            _repository.AddItem(item);
-        }
-
-        public void Drop()
-        {
-            InventoryItemUI selectedItem = InventoryUi.SelectedItem;
-            Destroy(selectedItem.gameObject);
-        }
         public void Take(){}
     }
 }

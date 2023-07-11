@@ -2,6 +2,8 @@ using Cinemachine;
 using CursedCastle.CodeBase.Character;
 using CursedCastle.CodeBase.Infrastructure;
 using CursedCastle.CodeBase.InventorySystem;
+using CursedCastle.CodeBase.Loot;
+using CursedCastle.CodeBase.StaticData;
 using StarterAssets.ThirdPersonController.Scripts;
 using UnityEngine;
 
@@ -12,6 +14,7 @@ namespace CursedCastle.CodeBase.Factories
         private readonly IUIFactory _uiFactory;
         private readonly IGameElementsFactory _gameElementsFactory;
         private readonly IInputService _inputService;
+        private readonly IStaticDataService _staticDataService;
         private const string INPUT_SYSTEM_PATH = "InputSystem";
         private const string CHARACTER_PATH = "Character";
         private const string CAMERA_PATH = "CMvcam";
@@ -22,11 +25,13 @@ namespace CursedCastle.CodeBase.Factories
             return Object.Instantiate(pref);
         }
 
-        public GameFactory(IUIFactory uiFactory, IGameElementsFactory gameElementsFactory, IInputService inputService)
+        public GameFactory(IUIFactory uiFactory, IGameElementsFactory gameElementsFactory, 
+            IInputService inputService, IStaticDataService staticDataService)
         {
             _uiFactory = uiFactory;
             _gameElementsFactory = gameElementsFactory;
             _inputService = inputService;
+            _staticDataService = staticDataService;
         }
 
         public GameObject CreateCharacter()
@@ -40,7 +45,7 @@ namespace CursedCastle.CodeBase.Factories
             rotation.Construct(_inputService.StarterAssetsInputs);
 
             InventoryService inventoryService = character.GetComponentInChildren<InventoryService>();
-            inventoryService.Construct(_uiFactory);
+            inventoryService.Construct(this, _uiFactory);
 
             PickUpLootAbility pickUpLootAbility = character.GetComponentInParent<PickUpLootAbility>();
             pickUpLootAbility.Construct(_inputService);
@@ -56,6 +61,15 @@ namespace CursedCastle.CodeBase.Factories
             vcamera.Follow = target.transform;
             vcamera.LookAt = target.transform;
             return cameraGameObject;
+        }
+
+        public GameObject CreateLoot(LootTypeID lootTypeID, Transform transform)
+        {
+            LootStaticData lootStaticData = _staticDataService.ForLoot(lootTypeID);
+            GameObject prefab = lootStaticData.prefab;
+            GameObject loot = Object.Instantiate(prefab);
+            loot.transform.position = transform.position;
+            return loot;
         }
     }
 }

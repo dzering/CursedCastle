@@ -29,7 +29,7 @@ namespace CursedCastle.CodeBase.Infrastructure
             _allServices.RegisterSingle<IGameFactory>(new GameFactory(
                 _allServices.Single<IUIFactory>(),
                 _allServices.Single<IGameElementsFactory>(),
-                _allServices.Single<IInputService>()));
+                _allServices.Single<IInputService>(), _allServices.Single<IStaticDataService>()));
         }
 
         private void RegisterStaticData()
@@ -46,18 +46,6 @@ namespace CursedCastle.CodeBase.Infrastructure
             PlayerInput playerInput = _inputSystem.GetComponent<PlayerInput>();
             
             _allServices.RegisterSingle<IInputService>(new InputService(playerInput,input));
-        }
-    }
-
-    class InputService : IInputService
-    {
-        public PlayerInput PlayerInput { get; }
-        public StarterAssetsInputs StarterAssetsInputs { get; }
-
-        public InputService(PlayerInput playerInput, StarterAssetsInputs starterAssetsInputs)
-        {
-            PlayerInput = playerInput;
-            StarterAssetsInputs = starterAssetsInputs;
         }
     }
 }

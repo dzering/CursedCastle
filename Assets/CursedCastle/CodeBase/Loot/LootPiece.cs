@@ -6,8 +6,6 @@ namespace CursedCastle.CodeBase.Loot
     public class LootPiece : MonoBehaviour, ILoot
     {
         [SerializeField] private LootTypeID lootTypeID;
-        public GameObject Model;
-
         public LootTypeID LootTypeID => lootTypeID;
 
         public void PickUp()

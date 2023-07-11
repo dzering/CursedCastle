@@ -15,6 +15,6 @@ namespace CursedCastle.CodeBase.InventorySystem
         }
 
         private void OnAwake() => 
-            _dropButton.onClick.AddListener(_inventoryService.Drop);
+            _dropButton.onClick.AddListener(_inventoryService.RemoveItem);
     }
 }

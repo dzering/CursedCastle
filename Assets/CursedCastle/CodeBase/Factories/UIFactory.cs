@@ -42,12 +42,15 @@ namespace CursedCastle.CodeBase.Factories
         public GameObject CreateInventory(InventoryService inventoryService)
         {
             GameObject inventoryPref = Resources.Load<GameObject>(INVENTORY_PATH);
-            GameObject inventoryGO = Object.Instantiate(inventoryPref, _uiRoot);
+            GameObject inventoryGo = Object.Instantiate(inventoryPref, _uiRoot);
 
-            DropButton dropButton = inventoryGO.GetComponentInChildren<DropButton>();
+            DropButton dropButton = inventoryGo.GetComponentInChildren<DropButton>();
             dropButton.Construct(inventoryService);
+
+            UseButton useButton = inventoryGo.GetComponentInChildren<UseButton>();
+            useButton.Construct(inventoryService);
             
-            return inventoryGO;
+            return inventoryGo;
         }
     }
 }

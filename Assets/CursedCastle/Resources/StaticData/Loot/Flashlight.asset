@@ -9,9 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: LootStaticData
-  m_EditorClassIdentifier: Assembly-CSharp:CursedCastle.CodeBase.StaticData:LootStaticData
+  m_Script: {fileID: 11500000, guid: 04a8d49bd4b5443980833bf4fd193a19, type: 3}
+  m_Name: Flashlight
+  m_EditorClassIdentifier: 
   LootID: 0
-  Sprite: {fileID: 21300000, guid: f9161c6c9e06dc445ada3ee16d991f90, type: 3}
+  Sprite: {fileID: 21300000, guid: 1a1da36a104725048b8d2388fb8d321d, type: 3}
   prefab: {fileID: 919132149155446097, guid: 29264dcda5b384851bd11bc9feb299be, type: 3}

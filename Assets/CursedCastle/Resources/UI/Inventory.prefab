@@ -135,7 +135,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 649cb51d8c0148c7bf5a8b16201a17e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  useButton: {fileID: 8469916783104377422}
+  dropbutton: {fileID: 8469916783104377422}
 --- !u!1 &676662985775173944
 GameObject:
   m_ObjectHideFlags: 0
@@ -361,6 +361,7 @@ GameObject:
   - component: {fileID: 3863130883069364532}
   - component: {fileID: 5871158807610756362}
   - component: {fileID: 8795201732657797756}
+  - component: {fileID: 7741407142958442571}
   m_Layer: 5
   m_Name: Take_Button
   m_TagString: Untagged
@@ -471,6 +472,19 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &7741407142958442571
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2673304062716619100}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: adbc0b3d8a2b4052bc27f956ca613a20, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _useButton: {fileID: 8795201732657797756}
 --- !u!1 &5997179733931410039
 GameObject:
   m_ObjectHideFlags: 0

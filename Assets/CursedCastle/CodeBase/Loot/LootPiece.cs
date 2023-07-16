@@ -1,4 +1,6 @@
+using CursedCastle.CodeBase.Character.Interaction;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace CursedCastle.CodeBase.Loot
 {
@@ -6,10 +8,7 @@ namespace CursedCastle.CodeBase.Loot
     {
         [SerializeField] private LootTypeID lootTypeID;
         public LootTypeID LootTypeID => lootTypeID;
-
-        public void PickUp()
-        {
+        public void PickUp() => 
             Destroy(gameObject);
-        }
     }
 }

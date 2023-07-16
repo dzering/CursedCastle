@@ -38,12 +38,10 @@ namespace CursedCastle.CodeBase.InventorySystem
         private void OnDestroy() => 
             _input.OnInventoryInteraction -= UseInventory;
 
-        public void AddItem(IItem item)
-        {
+        public void AddItem(IItem item) => 
             _repository.AddItem(item);
-        }
 
-        public void RemoveItem()
+        public void DropItem()
         {
             InventoryItemUI selectedItem = InventoryUi.SelectedItem;
             _repository.RemoveItem(selectedItem.Item);
@@ -55,7 +53,14 @@ namespace CursedCastle.CodeBase.InventorySystem
         public void UseItem()
         {
             InventoryItemUI selectedItem = InventoryUi.SelectedItem;
-            _characterInteraction.SetInteractingValue(selectedItem as IInteractingValue);
+            LootTypeID lootTypeID = selectedItem.Item.LootTypeID;
+            var loot = _gameFactory.CreateLoot(lootTypeID, transform);
+            LootPiece lootPiece = loot.GetComponentInChildren<LootPiece>();
+            IInteracting interacting = loot.GetComponentInChildren<InteractionType>();
+
+            // todo Outline usable item in inventory;
+            
+            _characterInteraction.SetInteractingValue(interacting);
         }
         
         private void UseInventory()

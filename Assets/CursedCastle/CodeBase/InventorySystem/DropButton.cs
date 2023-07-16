@@ -1,11 +1,12 @@
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 namespace CursedCastle.CodeBase.InventorySystem
 {
     public class DropButton : MonoBehaviour
     {
-        [SerializeField] private Button useButton;
+        [SerializeField] private Button dropbutton;
         private InventoryService _inventoryService;
 
         public void Construct(InventoryService inventoryService)
@@ -15,9 +16,9 @@ namespace CursedCastle.CodeBase.InventorySystem
         }
 
         private void OnAwake() => 
-            useButton.onClick.AddListener(UseItem);
-
-        private void UseItem() => 
-            _inventoryService.UseItem();
+            dropbutton.onClick.AddListener(RemoveItem);
+        
+        private void RemoveItem() => 
+            _inventoryService.DropItem();
     }
 }

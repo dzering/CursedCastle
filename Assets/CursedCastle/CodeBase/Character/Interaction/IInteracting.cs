@@ -1,6 +1,6 @@
 namespace CursedCastle.CodeBase.Character.Interaction
 {
-    public interface IInteractingValue
+    public interface IInteracting
     {
         public InteractionTypeID InteractionTypeID{get;}
     }

@@ -29,9 +29,9 @@ namespace CursedCastle.CodeBase.Interactable
             _targetRotation = _startRotation + angleRotation;
         }
 
-        public void Interact(IInteractingValue interactingValue)
+        public void Interact(IInteracting interacting)
         {
-            if (interactingValue.InteractionTypeID == interactionTypeID)
+            if (interacting!=null && interacting.InteractionTypeID == interactionTypeID)
             {
                 OpenLock();
                 Open(_isUnlocked);

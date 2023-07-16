@@ -6,12 +6,12 @@ namespace CursedCastle.CodeBase.Character.Interaction
     public class CharacterInteraction : MonoBehaviour, ICharacterInteraction
     {
         [SerializeField] private InteractableValue interactableValue;
-        private IInteractingValue _interactingValue;
+        private IInteracting _interacting;
         private IInputService _inputService;
         
         private bool _hasInteractingObject;
 
-        public void Construct(IInputService inputService) //todo initialization
+        public void Construct(IInputService inputService)
         {
             _inputService = inputService;
             _inputService.StarterAssetsInputs.OnUseAction += Interact;
@@ -20,16 +20,16 @@ namespace CursedCastle.CodeBase.Character.Interaction
         private void OnDestroy() => 
             _inputService.StarterAssetsInputs.OnUseAction -= Interact;
 
-        public void SetInteractingValue(IInteractingValue interactingValue) => 
-            _interactingValue = interactingValue;
+        public void SetInteractingValue(IInteracting interacting) => 
+            _interacting = interacting;
 
         public void RemoveInteractingValue() => 
-            _interactingValue = null;
+            _interacting = null;
 
         public void Interact()
         {
             if (interactableValue.CurrentValue != null)
-                interactableValue.CurrentValue.Interact(_interactingValue);
+                interactableValue.CurrentValue.Interact(_interacting);
         }
     }
 }

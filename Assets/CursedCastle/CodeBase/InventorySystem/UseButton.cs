@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 namespace CursedCastle.CodeBase.InventorySystem
 {
-    public class UseButton
+    public class UseButton : MonoBehaviour
     {
         [SerializeField] private Button _useButton;
         private InventoryService _inventoryService;
@@ -15,9 +15,9 @@ namespace CursedCastle.CodeBase.InventorySystem
         }
 
         private void OnAwake() => 
-            _useButton.onClick.AddListener(RemoveItem);
-
-        private void RemoveItem() => 
-            _inventoryService.RemoveItem();
+            _useButton.onClick.AddListener(UseItem);
+        
+        private void UseItem() => 
+            _inventoryService.UseItem();
     }
 }

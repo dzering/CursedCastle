@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace CursedCastle.CodeBase.InventorySystem
+namespace CursedCastle.CodeBase.UI.Inventory
 {
     public class InventoryUi : MonoBehaviour, IInventoryUi
     { 
@@ -10,7 +10,7 @@ namespace CursedCastle.CodeBase.InventorySystem
         public void SelectItem(InventoryItemUI itemUI) => 
             SelectedItem = itemUI;
         
-        //Сделать кнопку отдельным компонентом и повесить на UI инвентаря. Кнопка выбросить и кнопка взять.
+        // TODO Сделать кнопку отдельным компонентом и повесить на UI инвентаря. Кнопка выбросить и кнопка взять.
        // Кномка на старте получает из родителей компонент InventarUi. И далее манипулирует элементом selectedItem
     }
 }

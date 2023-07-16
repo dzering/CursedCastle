@@ -3,7 +3,7 @@ using UnityEngine.InputSystem;
 
 namespace CursedCastle.CodeBase.Infrastructure
 {
-    class InputService : IInputService
+    public class InputService : IInputService
     {
         public PlayerInput PlayerInput { get; }
         public StarterAssetsInputs StarterAssetsInputs { get; }

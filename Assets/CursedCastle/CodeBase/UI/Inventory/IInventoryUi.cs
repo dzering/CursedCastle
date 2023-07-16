@@ -1,4 +1,4 @@
-namespace CursedCastle.CodeBase.InventorySystem
+namespace CursedCastle.CodeBase.UI.Inventory
 {
     public interface IInventoryUi
     {

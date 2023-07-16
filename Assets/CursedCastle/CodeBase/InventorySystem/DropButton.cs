@@ -5,7 +5,7 @@ namespace CursedCastle.CodeBase.InventorySystem
 {
     public class DropButton : MonoBehaviour
     {
-        [SerializeField] private Button _dropButton;
+        [SerializeField] private Button useButton;
         private InventoryService _inventoryService;
 
         public void Construct(InventoryService inventoryService)
@@ -15,6 +15,9 @@ namespace CursedCastle.CodeBase.InventorySystem
         }
 
         private void OnAwake() => 
-            _dropButton.onClick.AddListener(_inventoryService.RemoveItem);
+            useButton.onClick.AddListener(UseItem);
+
+        private void UseItem() => 
+            _inventoryService.UseItem();
     }
 }

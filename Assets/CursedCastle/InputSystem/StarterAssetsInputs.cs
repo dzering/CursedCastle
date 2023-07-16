@@ -8,6 +8,7 @@ namespace CursedCastle.InputSystem
 	{
 		public event Action OnInventoryInteraction;
 		public event Action OnPickUpObject;
+		public event Action OnUseAction;
 
 		[Header("Character Input Values")]
 		public Vector2 move;
@@ -27,28 +28,20 @@ namespace CursedCastle.InputSystem
 		
 
 #if ENABLE_INPUT_SYSTEM
-		public void OnMove(InputValue value)
-		{
+		public void OnMove(InputValue value) => 
 			MoveInput(value.Get<Vector2>());
-		}
 
 		public void OnLook(InputValue value)
 		{
-			if(cursorInputForLook)
-			{
+			if(cursorInputForLook) 
 				LookInput(value.Get<Vector2>());
-			}
 		}
 
-		public void OnJump(InputValue value)
-		{
+		public void OnJump(InputValue value) => 
 			JumpInput(value.isPressed);
-		}
 
-		public void OnSprint(InputValue value)
-		{
+		public void OnSprint(InputValue value) => 
 			SprintInput(value.isPressed);
-		}
 
 		public void OnInventory()
 		{
@@ -57,32 +50,24 @@ namespace CursedCastle.InputSystem
 			OnUIFocus(isInventory);
 		}
 
-		public void OnPickUp()
-		{
+		public void OnPickUp() => 
 			OnPickUpObject?.Invoke();
-		}
+		public void OnInteract() => 
+			OnUseAction?.Invoke();
 #endif
 
 
-		public void MoveInput(Vector2 newMoveDirection)
-		{
+		public void MoveInput(Vector2 newMoveDirection) => 
 			move = newMoveDirection;
-		} 
 
-		public void LookInput(Vector2 newLookDirection)
-		{
+		public void LookInput(Vector2 newLookDirection) => 
 			look = newLookDirection;
-		}
 
-		public void JumpInput(bool newJumpState)
-		{
+		public void JumpInput(bool newJumpState) => 
 			jump = newJumpState;
-		}
 
-		public void SprintInput(bool newSprintState)
-		{
+		public void SprintInput(bool newSprintState) => 
 			sprint = newSprintState;
-		}
 
 		public void OnUIFocus(bool hasUI)
 		{
@@ -90,20 +75,13 @@ namespace CursedCastle.InputSystem
 			SetCursorVisible(hasUI);
 		}
 
-		private static void SetCursorVisible(bool hasUI)
-		{
+		private static void SetCursorVisible(bool hasUI) => 
 			Cursor.visible = hasUI;
-		}
 
-		private void OnApplicationFocus(bool hasFocus)
-		{
+		private void OnApplicationFocus(bool hasFocus) => 
 			SetCursorState(cursorLocked);
-		}
 
-		private void SetCursorState(bool newState)
-		{
+		private void SetCursorState(bool newState) => 
 			Cursor.lockState = newState ? CursorLockMode.Locked : CursorLockMode.None;
-		}
-
 	}
 }

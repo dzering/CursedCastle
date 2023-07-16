@@ -1,19 +1,19 @@
-using CursedCastle.CodeBase.Loot;
+using CursedCastle.CodeBase.InventorySystem;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace CursedCastle.CodeBase.InventorySystem
+namespace CursedCastle.CodeBase.UI.Inventory
 {
     public class InventoryItemUI : MonoBehaviour
     {
-        [HideInInspector] public LootTypeID LootTypeID; 
+        [HideInInspector] public IItem Item; 
         [SerializeField] private Image _image;
         [SerializeField] private Button _selectButton;
         private InventoryUi _inventoryUi;
 
-        public void Construct(LootTypeID lootTypeID, Sprite sprite, InventoryUi inventoryUi)
+        public void Construct(IItem item, Sprite sprite, InventoryUi inventoryUi)
         {
-            LootTypeID = lootTypeID;
+            Item = item;
             _image.sprite = sprite;
             _inventoryUi = inventoryUi;
         }

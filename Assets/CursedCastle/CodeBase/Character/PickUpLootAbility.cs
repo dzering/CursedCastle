@@ -2,9 +2,7 @@ using CursedCastle.CodeBase.Character.Selector;
 using CursedCastle.CodeBase.Infrastructure;
 using CursedCastle.CodeBase.InventorySystem;
 using CursedCastle.CodeBase.Loot;
-using CursedCastle.InputSystem;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace CursedCastle.CodeBase.Character
 {

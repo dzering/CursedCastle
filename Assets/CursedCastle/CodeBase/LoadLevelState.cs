@@ -23,12 +23,13 @@ namespace CursedCastle.CodeBase
         private void InitGameWorld()
         {
             _uiFactory.CreateUiRoot();
+            _uiFactory.CreateHUD();
             GameObject character = _gameFactory.CreateCharacter();
             GameObject vmCamera = _gameFactory.CreateVmCamera(character);
 
             Emitter emitter = _gameElementsFactory.CreateEmitter(vmCamera.transform);
             TriggerObserve observe = character.GetComponentInChildren<TriggerObserve>();
-            observe.TriggeringStay += emitter.Interact;
+            observe.TriggeringStay += emitter.Execute;
         }
     }
 }

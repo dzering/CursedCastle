@@ -1,5 +1,6 @@
 using Cinemachine;
 using CursedCastle.CodeBase.Character;
+using CursedCastle.CodeBase.Character.Interaction;
 using CursedCastle.CodeBase.Infrastructure;
 using CursedCastle.CodeBase.InventorySystem;
 using CursedCastle.CodeBase.Loot;
@@ -49,6 +50,9 @@ namespace CursedCastle.CodeBase.Factories
 
             PickUpLootAbility pickUpLootAbility = character.GetComponentInParent<PickUpLootAbility>();
             pickUpLootAbility.Construct(_inputService);
+
+            CharacterInteraction interaction = character.GetComponentInChildren<CharacterInteraction>();
+            interaction.Construct(_inputService);
 
             return character;
         }

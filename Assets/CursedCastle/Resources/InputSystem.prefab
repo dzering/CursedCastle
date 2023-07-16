@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8321583614557848937}
   - component: {fileID: 8321583614557848942}
-  - component: {fileID: 8321583614557848943}
+  - component: {fileID: 3407479648133242595}
   m_Layer: 0
   m_Name: InputSystem
   m_TagString: Untagged
@@ -63,7 +63,7 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
---- !u!114 &8321583614557848943
+--- !u!114 &3407479648133242595
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -79,6 +79,7 @@ MonoBehaviour:
   look: {x: 0, y: 0}
   jump: 0
   sprint: 0
+  isInventory: 0
   analogMovement: 0
   cursorLocked: 1
   cursorInputForLook: 1

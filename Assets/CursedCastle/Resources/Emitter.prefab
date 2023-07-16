@@ -31,7 +31,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1481614194148253198
 MonoBehaviour:
@@ -48,8 +48,9 @@ MonoBehaviour:
   maxDistance: 1000
   layerMask:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 576
   selectableValue: {fileID: 11400000, guid: 4395e80f4fb60c14a9bb2f99d56f99c4, type: 2}
+  interactableValue: {fileID: 11400000, guid: 97cb512ad2167ba49bbb30f547bdc543, type: 2}
 --- !u!114 &-5498759474996895753
 MonoBehaviour:
   m_ObjectHideFlags: 0

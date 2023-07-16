@@ -1,4 +1,3 @@
-using CursedCastle.CodeBase.Character.Selector;
 using UnityEngine;
 
 namespace CursedCastle.CodeBase.Loot
@@ -12,11 +11,5 @@ namespace CursedCastle.CodeBase.Loot
         {
             Destroy(gameObject);
         }
-    }
-
-    public interface ILoot : ISelectable
-    {
-        LootTypeID LootTypeID { get; }
-        void PickUp();
     }
 }

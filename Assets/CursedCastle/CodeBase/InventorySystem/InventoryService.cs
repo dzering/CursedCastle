@@ -1,6 +1,8 @@
+using CursedCastle.CodeBase.Character.Interaction;
 using CursedCastle.CodeBase.Factories;
 using CursedCastle.CodeBase.Infrastructure;
 using CursedCastle.CodeBase.Loot;
+using CursedCastle.CodeBase.UI.Inventory;
 using CursedCastle.InputSystem;
 using UnityEngine;
 
@@ -8,13 +10,15 @@ namespace CursedCastle.CodeBase.InventorySystem
 {
     public class InventoryService : MonoBehaviour
     {
+        [HideInInspector] public InventoryUi InventoryUi;
         private IInventoryRepository _repository;
         private StarterAssetsInputs _input;
+        private ICharacterInteraction _characterInteraction;
+        
         private bool _isOpen;
 
         private IUIFactory _uiFactory;
         private GameObject _inventory;
-        [HideInInspector] public InventoryUi InventoryUi;
         private GameFactory _gameFactory;
 
         public void Construct(GameFactory gameFactory, IUIFactory uiFactory)
@@ -26,12 +30,13 @@ namespace CursedCastle.CodeBase.InventorySystem
         private void Start()
         {
             _input = AllServices.Container.Single<IInputService>().StarterAssetsInputs;
-            _input.OnInventoryInteraction += Interaction;
+            _input.OnInventoryInteraction += UseInventory;
             _repository = new InventoryRepository();
+            _characterInteraction = GetComponent<CharacterInteraction>();
         }
 
         private void OnDestroy() => 
-            _input.OnInventoryInteraction -= Interaction;
+            _input.OnInventoryInteraction -= UseInventory;
 
         public void AddItem(IItem item)
         {
@@ -41,13 +46,19 @@ namespace CursedCastle.CodeBase.InventorySystem
         public void RemoveItem()
         {
             InventoryItemUI selectedItem = InventoryUi.SelectedItem;
-            _repository.RemoveItem(selectedItem);
-            LootTypeID lootTypeID = selectedItem.LootTypeID;
+            _repository.RemoveItem(selectedItem.Item);
+            LootTypeID lootTypeID = selectedItem.Item.LootTypeID;
             _gameFactory.CreateLoot(lootTypeID, transform);
             Destroy(selectedItem.gameObject);
-            
         }
-        private void Interaction()
+
+        public void UseItem()
+        {
+            InventoryItemUI selectedItem = InventoryUi.SelectedItem;
+            _characterInteraction.SetInteractingValue(selectedItem as IInteractingValue);
+        }
+        
+        private void UseInventory()
         {
             if (!_isOpen)
                 Open();
@@ -82,12 +93,8 @@ namespace CursedCastle.CodeBase.InventorySystem
                 CreateItem(item, placeForItems);
         }
 
-        private void CreateItem(IItem item, Transform placeForItem)
-        {
-            LootTypeID lootTypeID = item.LootTypeID;
-            _uiFactory.CreateInventoryItem(lootTypeID, InventoryUi);
-        }
-
-        public void Take(){}
+        private void CreateItem(IItem item, Transform placeForItem) => 
+            _uiFactory.CreateInventoryItem(item, InventoryUi);
+        
     }
 }

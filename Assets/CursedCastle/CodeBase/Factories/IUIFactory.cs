@@ -1,6 +1,6 @@
 using CursedCastle.CodeBase.Infrastructure;
 using CursedCastle.CodeBase.InventorySystem;
-using CursedCastle.CodeBase.Loot;
+using CursedCastle.CodeBase.UI.Inventory;
 using UnityEngine;
 
 namespace CursedCastle.CodeBase.Factories
@@ -9,6 +9,7 @@ namespace CursedCastle.CodeBase.Factories
     {
         GameObject CreateInventory(InventoryService inventoryService);
         void CreateUiRoot();
-        void CreateInventoryItem(LootTypeID lootTypeID, InventoryUi inventoryUi);
+        void CreateInventoryItem(IItem item, InventoryUi inventoryUi);
+        GameObject CreateHUD();
     }
 }

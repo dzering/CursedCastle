@@ -167,7 +167,7 @@ namespace StarterAssets.ThirdPersonController.Scripts
 
         private void LateUpdate()
         {
-            //CameraRotation();
+           // CameraRotation();
         }
 
         private void AssignAnimationIDs()
@@ -259,8 +259,9 @@ namespace StarterAssets.ThirdPersonController.Scripts
             // if there is a move input rotate player when the player is moving
             if (_input.move != Vector2.zero)
             {
-                _targetRotation = Mathf.Atan2(inputDirection.x, inputDirection.z) * Mathf.Rad2Deg +
-                                  _mainCamera.transform.eulerAngles.y;
+                float rad2Deg = Mathf.Atan2(inputDirection.x, inputDirection.z) * Mathf.Rad2Deg;
+                var eulerAnglesY = _mainCamera.transform.eulerAngles.y;
+                _targetRotation = rad2Deg + eulerAnglesY;
                 float rotation = Mathf.SmoothDampAngle(transform.eulerAngles.y, _targetRotation, ref _rotationVelocity,
                     RotationSmoothTime);
 

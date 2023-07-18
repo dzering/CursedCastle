@@ -1,8 +1,8 @@
 using CursedCastle.CodeBase.Factories;
 using CursedCastle.CodeBase.StaticData;
-using CursedCastle.InputSystem;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using Input = CursedCastle.InputSystem.Input;
 
 namespace CursedCastle.CodeBase.Infrastructure
 {
@@ -42,7 +42,7 @@ namespace CursedCastle.CodeBase.Infrastructure
 
         private void RegisterInputService()
         {
-            StarterAssetsInputs input = _inputSystem.GetComponent<StarterAssetsInputs>();
+            Input input = _inputSystem.GetComponent<Input>();
             PlayerInput playerInput = _inputSystem.GetComponent<PlayerInput>();
             
             _allServices.RegisterSingle<IInputService>(new InputService(playerInput,input));

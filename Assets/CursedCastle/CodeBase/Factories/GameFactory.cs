@@ -43,7 +43,7 @@ namespace CursedCastle.CodeBase.Factories
             controller.Construct(_inputService);
 
             PlayerRotation rotation = character.GetComponent<PlayerRotation>();
-            rotation.Construct(_inputService.StarterAssetsInputs);
+            rotation.Construct(_inputService.Input);
 
             InventoryService inventoryService = character.GetComponentInChildren<InventoryService>();
             inventoryService.Construct(this, _uiFactory);

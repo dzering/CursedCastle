@@ -1,4 +1,3 @@
-using CursedCastle.CodeBase.Character.Interaction;
 using CursedCastle.CodeBase.Character.Selector;
 
 namespace CursedCastle.CodeBase.Loot

@@ -6,12 +6,12 @@ namespace CursedCastle.CodeBase.Infrastructure
     public class InputService : IInputService
     {
         public PlayerInput PlayerInput { get; }
-        public StarterAssetsInputs StarterAssetsInputs { get; }
+        public Input Input { get; }
 
-        public InputService(PlayerInput playerInput, StarterAssetsInputs starterAssetsInputs)
+        public InputService(PlayerInput playerInput, Input input)
         {
             PlayerInput = playerInput;
-            StarterAssetsInputs = starterAssetsInputs;
+            Input = input;
         }
     }
 }

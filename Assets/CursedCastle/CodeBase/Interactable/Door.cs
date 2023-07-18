@@ -2,7 +2,6 @@ using System.Collections;
 using CursedCastle.CodeBase.Character.Interaction;
 using CursedCastle.CodeBase.Character.Interaction.InteractablePart;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace CursedCastle.CodeBase.Interactable
 {

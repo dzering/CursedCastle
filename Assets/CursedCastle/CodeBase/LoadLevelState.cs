@@ -1,3 +1,4 @@
+using CursedCastle.CodeBase.Character.Movement;
 using CursedCastle.CodeBase.Character.Selector;
 using CursedCastle.CodeBase.Factories;
 using CursedCastle.CodeBase.InventorySystem;
@@ -25,7 +26,10 @@ namespace CursedCastle.CodeBase
             _uiFactory.CreateUiRoot();
             _uiFactory.CreateHUD();
             GameObject character = _gameFactory.CreateCharacter();
-            GameObject vmCamera = _gameFactory.CreateVmCamera(character);
+
+            Transform target = character.GetComponent<HeadVerticalRotation>().target;
+
+            GameObject vmCamera = _gameFactory.CreateVmCamera(target.gameObject);
 
             Emitter emitter = _gameElementsFactory.CreateEmitter(vmCamera.transform);
             TriggerObserve observe = character.GetComponentInChildren<TriggerObserve>();

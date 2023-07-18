@@ -1,31 +1,32 @@
-using CursedCastle.InputSystem;
 using UnityEngine;
+using UnityEngine.Serialization;
+using Input = CursedCastle.InputSystem.Input;
 
 namespace StarterAssets.Mobile.Scripts.CanvasInputs
 {
     public class UICanvasControllerInput : MonoBehaviour
     {
-        [Header("Output")]
-        public StarterAssetsInputs starterAssetsInputs;
+        [FormerlySerializedAs("inputs")] [FormerlySerializedAs("starterAssetsInputs")] [Header("Output")]
+        public Input input;
 
         public void VirtualMoveInput(Vector2 virtualMoveDirection)
         {
-            starterAssetsInputs.MoveInput(virtualMoveDirection);
+            input.MoveInput(virtualMoveDirection);
         }
 
         public void VirtualLookInput(Vector2 virtualLookDirection)
         {
-            starterAssetsInputs.LookInput(virtualLookDirection);
+            input.LookInput(virtualLookDirection);
         }
 
         public void VirtualJumpInput(bool virtualJumpState)
         {
-            starterAssetsInputs.JumpInput(virtualJumpState);
+            input.JumpInput(virtualJumpState);
         }
 
         public void VirtualSprintInput(bool virtualSprintState)
         {
-            starterAssetsInputs.SprintInput(virtualSprintState);
+            input.SprintInput(virtualSprintState);
         }
     }
 

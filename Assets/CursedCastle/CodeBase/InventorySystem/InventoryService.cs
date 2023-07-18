@@ -3,8 +3,8 @@ using CursedCastle.CodeBase.Factories;
 using CursedCastle.CodeBase.Infrastructure;
 using CursedCastle.CodeBase.Loot;
 using CursedCastle.CodeBase.UI.Inventory;
-using CursedCastle.InputSystem;
 using UnityEngine;
+using Input = CursedCastle.InputSystem.Input;
 
 namespace CursedCastle.CodeBase.InventorySystem
 {
@@ -12,7 +12,7 @@ namespace CursedCastle.CodeBase.InventorySystem
     {
         [HideInInspector] public InventoryUi InventoryUi;
         private IInventoryRepository _repository;
-        private StarterAssetsInputs _input;
+        private Input _input;
         private ICharacterInteraction _characterInteraction;
         
         private bool _isOpen;
@@ -29,7 +29,7 @@ namespace CursedCastle.CodeBase.InventorySystem
 
         private void Start()
         {
-            _input = AllServices.Container.Single<IInputService>().StarterAssetsInputs;
+            _input = AllServices.Container.Single<IInputService>().Input;
             _input.OnInventoryInteraction += UseInventory;
             _repository = new InventoryRepository();
             _characterInteraction = GetComponent<CharacterInteraction>();

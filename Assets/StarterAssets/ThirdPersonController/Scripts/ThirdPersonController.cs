@@ -1,7 +1,7 @@
 ﻿using CursedCastle.CodeBase.Infrastructure;
-using CursedCastle.InputSystem;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using Input = CursedCastle.InputSystem.Input;
 
 /* Note: animations are called via the controller for both the character and capsule using animator null checks
  */
@@ -103,7 +103,7 @@ namespace StarterAssets.ThirdPersonController.Scripts
 //#endif
         private Animator _animator;
         private CharacterController _controller;
-        private StarterAssetsInputs _input;
+        private Input _input;
         private GameObject _mainCamera;
 
         private const float _threshold = 0.01f;
@@ -124,7 +124,7 @@ namespace StarterAssets.ThirdPersonController.Scripts
         
         public void Construct(IInputService inputService)
         {
-            _input = inputService.StarterAssetsInputs;
+            _input = inputService.Input;
             _playerInput = inputService.PlayerInput;
         }
 
@@ -167,7 +167,7 @@ namespace StarterAssets.ThirdPersonController.Scripts
 
         private void LateUpdate()
         {
-           // CameraRotation();
+            //CameraRotation();
         }
 
         private void AssignAnimationIDs()
@@ -197,13 +197,13 @@ namespace StarterAssets.ThirdPersonController.Scripts
         private void CameraRotation()
         {
             // if there is an input and camera position is not fixed
-            if (_input.look.sqrMagnitude >= _threshold && !LockCameraPosition)
+            if (_input.Look.sqrMagnitude >= _threshold && !LockCameraPosition)
             {
                 //Don't multiply mouse input by Time.deltaTime;
                 float deltaTimeMultiplier = IsCurrentDeviceMouse ? 1.0f : Time.deltaTime;
 
-                _cinemachineTargetYaw += _input.look.x * deltaTimeMultiplier;
-                _cinemachineTargetPitch += _input.look.y * deltaTimeMultiplier;
+                _cinemachineTargetYaw += _input.Look.x * deltaTimeMultiplier;
+                _cinemachineTargetPitch += _input.Look.y * deltaTimeMultiplier;
             }
 
             // clamp our rotations so our values are limited 360 degrees

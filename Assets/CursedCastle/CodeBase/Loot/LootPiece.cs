@@ -1,6 +1,4 @@
-using CursedCastle.CodeBase.Character.Interaction;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace CursedCastle.CodeBase.Loot
 {

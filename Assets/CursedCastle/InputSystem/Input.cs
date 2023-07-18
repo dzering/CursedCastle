@@ -4,7 +4,7 @@ using UnityEngine.InputSystem;
 
 namespace CursedCastle.InputSystem
 {
-	public class StarterAssetsInputs : MonoBehaviour
+	public class Input : MonoBehaviour, IInput
 	{
 		public event Action OnInventoryInteraction;
 		public event Action OnPickUpObject;
@@ -13,7 +13,7 @@ namespace CursedCastle.InputSystem
 		[Header("Character Input Values")]
 		public Vector2 move;
 
-		public Vector2 look;
+		public Vector2 Look { get; private set; }
 		public bool jump;
 		public bool sprint;
 		public bool isInventory;
@@ -61,7 +61,7 @@ namespace CursedCastle.InputSystem
 			move = newMoveDirection;
 
 		public void LookInput(Vector2 newLookDirection) => 
-			look = newLookDirection;
+			Look = newLookDirection;
 
 		public void JumpInput(bool newJumpState) => 
 			jump = newJumpState;

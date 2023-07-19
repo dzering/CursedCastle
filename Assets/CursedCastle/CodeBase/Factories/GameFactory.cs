@@ -5,6 +5,7 @@ using CursedCastle.CodeBase.Infrastructure;
 using CursedCastle.CodeBase.InventorySystem;
 using CursedCastle.CodeBase.Loot;
 using CursedCastle.CodeBase.StaticData;
+using CursedCastle.InputSystem;
 using StarterAssets.ThirdPersonController.Scripts;
 using UnityEngine;
 
@@ -16,6 +17,7 @@ namespace CursedCastle.CodeBase.Factories
         private readonly IGameElementsFactory _gameElementsFactory;
         private readonly IInputService _inputService;
         private readonly IStaticDataService _staticDataService;
+        private readonly ICursor _cursor;
         private const string INPUT_SYSTEM_PATH = "InputSystem";
         private const string CHARACTER_PATH = "Character";
         private const string CAMERA_PATH = "CMvcam";
@@ -27,12 +29,13 @@ namespace CursedCastle.CodeBase.Factories
         }
 
         public GameFactory(IUIFactory uiFactory, IGameElementsFactory gameElementsFactory, 
-            IInputService inputService, IStaticDataService staticDataService)
+            IInputService inputService, IStaticDataService staticDataService, ICursor cursor)
         {
             _uiFactory = uiFactory;
             _gameElementsFactory = gameElementsFactory;
             _inputService = inputService;
             _staticDataService = staticDataService;
+            _cursor = cursor;
         }
 
         public GameObject CreateCharacter()
@@ -43,10 +46,10 @@ namespace CursedCastle.CodeBase.Factories
             controller.Construct(_inputService);
 
             PlayerRotation rotation = character.GetComponent<PlayerRotation>();
-            rotation.Construct(_inputService.Input);
+            rotation.Construct(_inputService.InputProvider);
 
             InventoryService inventoryService = character.GetComponentInChildren<InventoryService>();
-            inventoryService.Construct(this, _uiFactory);
+            inventoryService.Construct(this, _uiFactory, _inputService.InputProvider, _cursor);
 
             PickUpLootAbility pickUpLootAbility = character.GetComponentInParent<PickUpLootAbility>();
             pickUpLootAbility.Construct(_inputService);

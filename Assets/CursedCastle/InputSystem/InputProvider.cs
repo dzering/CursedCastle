@@ -4,7 +4,7 @@ using UnityEngine.InputSystem;
 
 namespace CursedCastle.InputSystem
 {
-	public class Input : MonoBehaviour, IInput
+	public class InputProvider : MonoBehaviour, IInput
 	{
 		public event Action OnInventoryInteraction;
 		public event Action OnPickUpObject;
@@ -25,7 +25,7 @@ namespace CursedCastle.InputSystem
 		
 		public bool cursorLocked = true;
 		public bool cursorInputForLook = true;
-		
+
 
 #if ENABLE_INPUT_SYSTEM
 		public void OnMove(InputValue value) => 
@@ -47,7 +47,6 @@ namespace CursedCastle.InputSystem
 		{
 			OnInventoryInteraction?.Invoke();
 			isInventory = !isInventory;
-			OnUIFocus(isInventory);
 		}
 
 		public void OnPickUp() => 
@@ -68,20 +67,5 @@ namespace CursedCastle.InputSystem
 
 		public void SprintInput(bool newSprintState) => 
 			sprint = newSprintState;
-
-		public void OnUIFocus(bool hasUI)
-		{
-			SetCursorState(!hasUI);
-			SetCursorVisible(hasUI);
-		}
-
-		private static void SetCursorVisible(bool hasUI) => 
-			Cursor.visible = hasUI;
-
-		private void OnApplicationFocus(bool hasFocus) => 
-			SetCursorState(cursorLocked);
-
-		private void SetCursorState(bool newState) => 
-			Cursor.lockState = newState ? CursorLockMode.Locked : CursorLockMode.None;
 	}
 }

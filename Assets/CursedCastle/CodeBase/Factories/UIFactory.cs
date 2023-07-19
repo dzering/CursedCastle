@@ -49,6 +49,9 @@ namespace CursedCastle.CodeBase.Factories
 
             UseButton useButton = inventoryGo.GetComponentInChildren<UseButton>();
             useButton.Construct(inventoryService);
+
+            CloseButton closeButton = inventoryGo.GetComponentInChildren<CloseButton>();
+            closeButton.Construct(inventoryService);
             
             return inventoryGo;
         }

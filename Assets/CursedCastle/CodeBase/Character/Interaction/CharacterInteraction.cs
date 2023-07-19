@@ -14,11 +14,11 @@ namespace CursedCastle.CodeBase.Character.Interaction
         public void Construct(IInputService inputService)
         {
             _inputService = inputService;
-            _inputService.Input.OnUseAction += Interact;
+            _inputService.InputProvider.OnUseAction += Interact;
         }
 
         private void OnDestroy() => 
-            _inputService.Input.OnUseAction -= Interact;
+            _inputService.InputProvider.OnUseAction -= Interact;
 
         public void SetInteractingValue(IInteracting interacting) => 
             _interacting = interacting;

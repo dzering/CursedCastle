@@ -41,7 +41,7 @@ namespace CursedCastle.CodeBase.Character.Movement
         {
             IInputService inputService = AllServices.Container.Single<IInputService>();
             _playerInput = inputService.PlayerInput;
-            _input = inputService.Input;
+            _input = inputService.InputProvider;
             _startRotation = target.localRotation.eulerAngles;
             _targetYmove = _startRotation.x;
         }

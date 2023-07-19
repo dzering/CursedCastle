@@ -3,8 +3,8 @@ using CursedCastle.CodeBase.Factories;
 using CursedCastle.CodeBase.Infrastructure;
 using CursedCastle.CodeBase.Loot;
 using CursedCastle.CodeBase.UI.Inventory;
+using CursedCastle.InputSystem;
 using UnityEngine;
-using Input = CursedCastle.InputSystem.Input;
 
 namespace CursedCastle.CodeBase.InventorySystem
 {
@@ -12,7 +12,7 @@ namespace CursedCastle.CodeBase.InventorySystem
     {
         [HideInInspector] public InventoryUi InventoryUi;
         private IInventoryRepository _repository;
-        private Input _input;
+        private IInput _input;
         private ICharacterInteraction _characterInteraction;
         
         private bool _isOpen;
@@ -20,17 +20,21 @@ namespace CursedCastle.CodeBase.InventorySystem
         private IUIFactory _uiFactory;
         private GameObject _inventory;
         private GameFactory _gameFactory;
+        private AllServices _services;
+        private ICursor _cursor;
 
-        public void Construct(GameFactory gameFactory, IUIFactory uiFactory)
+        public void Construct(GameFactory gameFactory, IUIFactory uiFactory, IInput input, ICursor cursor)
         {
             _gameFactory = gameFactory;
             _uiFactory = uiFactory;
+            _input = input;
+            _cursor = cursor;
+            
+            _input.OnInventoryInteraction += UseInventory;
         }
 
         private void Start()
         {
-            _input = AllServices.Container.Single<IInputService>().Input;
-            _input.OnInventoryInteraction += UseInventory;
             _repository = new InventoryRepository();
             _characterInteraction = GetComponent<CharacterInteraction>();
         }
@@ -81,12 +85,16 @@ namespace CursedCastle.CodeBase.InventorySystem
             InventoryUi = _inventory.GetComponent<InventoryUi>();
             Transform uiPlaceForItems = InventoryUi.PlaceForItems;
             CreateItems(_repository, uiPlaceForItems);
+            
+            _cursor.OnUIFocus(_isOpen);
         }
 
-        private void Close()
+        public void Close()
         {
             Destroy(_inventory);
             _isOpen = false;
+            
+            _cursor.OnUIFocus(_isOpen);
         }
 
         private void CreateItems(IInventoryRepository repository, Transform placeForItems)
@@ -100,6 +108,5 @@ namespace CursedCastle.CodeBase.InventorySystem
 
         private void CreateItem(IItem item, Transform placeForItem) => 
             _uiFactory.CreateInventoryItem(item, InventoryUi);
-        
     }
 }

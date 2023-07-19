@@ -17,6 +17,5 @@ namespace CursedCastle.InputSystem
         void OnInventory();
         void OnPickUp();
         void OnInteract();
-        void OnUIFocus(bool hasUI);
     }
 }

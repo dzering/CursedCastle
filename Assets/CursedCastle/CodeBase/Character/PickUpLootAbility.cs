@@ -15,7 +15,7 @@ namespace CursedCastle.CodeBase.Character
         public void Construct(IInputService input)
         {
             _input = input;    //Add to create Character
-            _input.Input.OnPickUpObject += PickUp;
+            _input.InputProvider.OnPickUpObject += PickUp;
         }
 
         private void PickUp()

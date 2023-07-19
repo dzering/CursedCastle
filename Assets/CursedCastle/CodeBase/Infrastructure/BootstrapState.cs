@@ -1,8 +1,8 @@
 using CursedCastle.CodeBase.Factories;
 using CursedCastle.CodeBase.StaticData;
+using CursedCastle.InputSystem;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using Input = CursedCastle.InputSystem.Input;
 
 namespace CursedCastle.CodeBase.Infrastructure
 {
@@ -23,13 +23,16 @@ namespace CursedCastle.CodeBase.Infrastructure
         {
             RegisterInputService();
             RegisterStaticData();
+            _allServices.RegisterSingle<ICursor>(new CursorBehavior());
             _allServices.RegisterSingle<IUIFactory>(new UIFactory(
                 _allServices.Single<IStaticDataService>()));
             _allServices.RegisterSingle<IGameElementsFactory>(new GameElementsFactory());
             _allServices.RegisterSingle<IGameFactory>(new GameFactory(
                 _allServices.Single<IUIFactory>(),
                 _allServices.Single<IGameElementsFactory>(),
-                _allServices.Single<IInputService>(), _allServices.Single<IStaticDataService>()));
+                _allServices.Single<IInputService>(),
+                _allServices.Single<IStaticDataService>(),
+                _allServices.Single<ICursor>()));
         }
 
         private void RegisterStaticData()
@@ -42,10 +45,10 @@ namespace CursedCastle.CodeBase.Infrastructure
 
         private void RegisterInputService()
         {
-            Input input = _inputSystem.GetComponent<Input>();
+            InputProvider inputProvider = _inputSystem.GetComponent<InputProvider>();
             PlayerInput playerInput = _inputSystem.GetComponent<PlayerInput>();
             
-            _allServices.RegisterSingle<IInputService>(new InputService(playerInput,input));
+            _allServices.RegisterSingle<IInputService>(new InputService(playerInput,inputProvider));
         }
     }
 }

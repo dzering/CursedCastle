@@ -1,17 +1,17 @@
+using CursedCastle.InputSystem;
 using UnityEngine;
-using Input = CursedCastle.InputSystem.Input;
 
 namespace CursedCastle.CodeBase
 {
     public class PlayerRotation : MonoBehaviour
     {
         private float _yaw;
-        private Input _input;
+        private InputProvider _inputProvider;
         private readonly float _deltaTimeMultiplier = 1f;
 
-        public void Construct(Input input)
+        public void Construct(InputProvider inputProvider)
         {
-            _input = input;
+            _inputProvider = inputProvider;
         }
         void Start()
         {
@@ -21,7 +21,7 @@ namespace CursedCastle.CodeBase
         // Update is called once per frame
         void Update()
         {
-            _yaw += _input.Look.x * _deltaTimeMultiplier;
+            _yaw += _inputProvider.Look.x * _deltaTimeMultiplier;
             _yaw = ClampAngle(_yaw, float.MinValue, float.MaxValue);
         
             transform.rotation = Quaternion.Euler(0f, _yaw, 0.0f);

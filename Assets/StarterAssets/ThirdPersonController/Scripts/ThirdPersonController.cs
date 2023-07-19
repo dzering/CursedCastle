@@ -1,7 +1,7 @@
 ﻿using CursedCastle.CodeBase.Infrastructure;
+using CursedCastle.InputSystem;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using Input = CursedCastle.InputSystem.Input;
 
 /* Note: animations are called via the controller for both the character and capsule using animator null checks
  */
@@ -103,7 +103,7 @@ namespace StarterAssets.ThirdPersonController.Scripts
 //#endif
         private Animator _animator;
         private CharacterController _controller;
-        private Input _input;
+        private InputProvider _inputProvider;
         private GameObject _mainCamera;
 
         private const float _threshold = 0.01f;
@@ -124,7 +124,7 @@ namespace StarterAssets.ThirdPersonController.Scripts
         
         public void Construct(IInputService inputService)
         {
-            _input = inputService.Input;
+            _inputProvider = inputService.InputProvider;
             _playerInput = inputService.PlayerInput;
         }
 
@@ -197,13 +197,13 @@ namespace StarterAssets.ThirdPersonController.Scripts
         private void CameraRotation()
         {
             // if there is an input and camera position is not fixed
-            if (_input.Look.sqrMagnitude >= _threshold && !LockCameraPosition)
+            if (_inputProvider.Look.sqrMagnitude >= _threshold && !LockCameraPosition)
             {
                 //Don't multiply mouse input by Time.deltaTime;
                 float deltaTimeMultiplier = IsCurrentDeviceMouse ? 1.0f : Time.deltaTime;
 
-                _cinemachineTargetYaw += _input.Look.x * deltaTimeMultiplier;
-                _cinemachineTargetPitch += _input.Look.y * deltaTimeMultiplier;
+                _cinemachineTargetYaw += _inputProvider.Look.x * deltaTimeMultiplier;
+                _cinemachineTargetPitch += _inputProvider.Look.y * deltaTimeMultiplier;
             }
 
             // clamp our rotations so our values are limited 360 degrees
@@ -218,19 +218,19 @@ namespace StarterAssets.ThirdPersonController.Scripts
         private void Move()
         {
             // set target speed based on move speed, sprint speed and if sprint is pressed
-            float targetSpeed = _input.sprint ? SprintSpeed : MoveSpeed;
+            float targetSpeed = _inputProvider.sprint ? SprintSpeed : MoveSpeed;
 
             // a simplistic acceleration and deceleration designed to be easy to remove, replace, or iterate upon
 
             // note: Vector2's == operator uses approximation so is not floating point error prone, and is cheaper than magnitude
             // if there is no input, set the target speed to 0
-            if (_input.move == Vector2.zero) targetSpeed = 0.0f;
+            if (_inputProvider.move == Vector2.zero) targetSpeed = 0.0f;
 
             // a reference to the players current horizontal velocity
             float currentHorizontalSpeed = new Vector3(_controller.velocity.x, 0.0f, _controller.velocity.z).magnitude;
 
             float speedOffset = 0.1f;
-            float inputMagnitude = _input.analogMovement ? _input.move.magnitude : 1f;
+            float inputMagnitude = _inputProvider.analogMovement ? _inputProvider.move.magnitude : 1f;
 
             // accelerate or decelerate to target speed
             if (currentHorizontalSpeed < targetSpeed - speedOffset ||
@@ -253,11 +253,11 @@ namespace StarterAssets.ThirdPersonController.Scripts
             if (_animationBlend < 0.01f) _animationBlend = 0f;
 
             // normalise input direction
-            Vector3 inputDirection = new Vector3(_input.move.x, 0.0f, _input.move.y).normalized;
+            Vector3 inputDirection = new Vector3(_inputProvider.move.x, 0.0f, _inputProvider.move.y).normalized;
 
             // note: Vector2's != operator uses approximation so is not floating point error prone, and is cheaper than magnitude
             // if there is a move input rotate player when the player is moving
-            if (_input.move != Vector2.zero)
+            if (_inputProvider.move != Vector2.zero)
             {
                 float rad2Deg = Mathf.Atan2(inputDirection.x, inputDirection.z) * Mathf.Rad2Deg;
                 var eulerAnglesY = _mainCamera.transform.eulerAngles.y;
@@ -305,7 +305,7 @@ namespace StarterAssets.ThirdPersonController.Scripts
                 }
 
                 // Jump
-                if (_input.jump && _jumpTimeoutDelta <= 0.0f)
+                if (_inputProvider.jump && _jumpTimeoutDelta <= 0.0f)
                 {
                     // the square root of H * -2 * G = how much velocity needed to reach desired height
                     _verticalVelocity = Mathf.Sqrt(JumpHeight * -2f * Gravity);
@@ -343,7 +343,7 @@ namespace StarterAssets.ThirdPersonController.Scripts
                 }
 
                 // if we are not grounded, do not jump
-                _input.jump = false;
+                _inputProvider.jump = false;
             }
 
             // apply gravity over time if under terminal (multiply by delta time twice to linearly speed up over time)

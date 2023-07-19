@@ -6,6 +6,6 @@ namespace CursedCastle.CodeBase.Infrastructure
     public interface IInputService : IService
     {
         PlayerInput PlayerInput { get; }
-        Input Input { get; }
+        InputProvider InputProvider { get; }
     }
 }

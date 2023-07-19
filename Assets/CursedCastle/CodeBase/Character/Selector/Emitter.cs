@@ -6,7 +6,7 @@ namespace CursedCastle.CodeBase.Character.Selector
 {
     public class Emitter : MonoBehaviour
     {
-        [SerializeField] private float maxDistance = 1;
+        [SerializeField] private float maxDistance = 4.4f;
         [SerializeField] private LayerMask layerMask;
         [SerializeField] private SelectableValue selectableValue;
         [SerializeField] private InteractableValue interactableValue;
@@ -36,13 +36,14 @@ namespace CursedCastle.CodeBase.Character.Selector
                     interactableValue.SetValue(interactable);
                     DebugRaycast();
                 }
+                DebugRaycast();
             }
 
             else
             {
                 selectableValue.SetValue(null);
                 interactableValue.SetValue(null);
-                Debug.DrawRay(transform.position, transform.forward * 1000, Color.red);
+                Debug.DrawRay(transform.position, transform.forward * 100, Color.red);
             }
             
             return isRaycast;

@@ -25,8 +25,8 @@ namespace CursedCastle.CodeBase
         {
             _uiFactory.CreateUiRoot();
             _uiFactory.CreateHUD();
+            
             GameObject character = _gameFactory.CreateCharacter();
-
             Transform target = character.GetComponent<HeadVerticalRotation>().target;
 
             GameObject vmCamera = _gameFactory.CreateVmCamera(target.gameObject);

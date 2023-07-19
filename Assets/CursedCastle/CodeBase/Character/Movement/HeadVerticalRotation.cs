@@ -2,7 +2,6 @@ using CursedCastle.CodeBase.Infrastructure;
 using CursedCastle.InputSystem;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.Serialization;
 
 namespace CursedCastle.CodeBase.Character.Movement
 {

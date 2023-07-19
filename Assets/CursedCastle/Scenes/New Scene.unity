@@ -6990,6 +6990,18 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 6416493989077573951, guid: a97e0411c76776941b9663e1590ba2d7, type: 3}
+      propertyPath: m_Center.x
+      value: -0.69
+      objectReference: {fileID: 0}
+    - target: {fileID: 6416493989077573951, guid: a97e0411c76776941b9663e1590ba2d7, type: 3}
+      propertyPath: m_Center.y
+      value: 1.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 6416493989077573951, guid: a97e0411c76776941b9663e1590ba2d7, type: 3}
+      propertyPath: m_Center.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6935654855990929415, guid: a97e0411c76776941b9663e1590ba2d7, type: 3}
       propertyPath: m_Mesh
       value: 

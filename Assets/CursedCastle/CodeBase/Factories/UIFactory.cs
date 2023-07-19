@@ -26,7 +26,7 @@ namespace CursedCastle.CodeBase.Factories
         public GameObject CreateHUD()
         {
             GameObject uiHUDPref = Resources.Load<GameObject>(UI_HUD);
-            return Object.Instantiate(uiHUDPref);
+            return Object.Instantiate(uiHUDPref, _uiRoot);
            
         }
 

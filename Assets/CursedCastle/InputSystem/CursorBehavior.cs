@@ -1,10 +1,13 @@
-using CursedCastle.CodeBase.Infrastructure;
 using UnityEngine;
 
 namespace CursedCastle.InputSystem
 {
     public class CursorBehavior : ICursor
     {
+        public CursorBehavior()
+        {
+            OnUIFocus(false);
+        }
 
         public void OnUIFocus(bool hasUI)
         {
@@ -17,10 +20,5 @@ namespace CursedCastle.InputSystem
 
         private void SetCursorState(bool newState) => 
             Cursor.lockState = newState ? CursorLockMode.Locked : CursorLockMode.None;
-    }
-
-    public interface ICursor : IService
-    {
-        void OnUIFocus(bool hasUI);
     }
 }

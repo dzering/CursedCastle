@@ -48,7 +48,7 @@ MonoBehaviour:
   maxDistance: 4.4
   layerMask:
     serializedVersion: 2
-    m_Bits: 576
+    m_Bits: 832
   selectableValue: {fileID: 11400000, guid: 4395e80f4fb60c14a9bb2f99d56f99c4, type: 2}
   interactableValue: {fileID: 11400000, guid: 97cb512ad2167ba49bbb30f547bdc543, type: 2}
 --- !u!114 &-5498759474996895753

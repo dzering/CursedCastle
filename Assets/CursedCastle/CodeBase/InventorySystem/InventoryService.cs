@@ -10,6 +10,8 @@ namespace CursedCastle.CodeBase.InventorySystem
 {
     public class InventoryService : MonoBehaviour
     {
+        [SerializeField] private Transform _placeForUsedItem;
+        
         [HideInInspector] public InventoryUi InventoryUi;
         private IInventoryRepository _repository;
         private IInput _input;
@@ -57,16 +59,31 @@ namespace CursedCastle.CodeBase.InventorySystem
         public void UseItem()
         {
             InventoryItemUI selectedItem = InventoryUi.SelectedItem;
-            LootTypeID lootTypeID = selectedItem.Item.LootTypeID;
-            var loot = _gameFactory.CreateLoot(lootTypeID, transform);
+            if(selectedItem==null)
+                return;
+            
+            var loot = CreateSelectedItemInWorld(selectedItem);
+            SetInteractingValueForCharacter(loot);
+        }
+
+        private void SetInteractingValueForCharacter(GameObject loot)
+        {
             LootPiece lootPiece = loot.GetComponentInChildren<LootPiece>();
             IInteracting interacting = loot.GetComponentInChildren<InteractionType>();
 
             // todo Outline usable item in inventory;
-            
+
             _characterInteraction.SetInteractingValue(interacting);
         }
-        
+
+        private GameObject CreateSelectedItemInWorld(InventoryItemUI selectedItem)
+        {
+            InventoryItemUI item = selectedItem;
+            LootTypeID lootTypeID = item.Item.LootTypeID;
+            var loot = _gameFactory.CreateLoot(lootTypeID, _placeForUsedItem);
+            return loot;
+        }
+
         private void UseInventory()
         {
             if (!_isOpen)

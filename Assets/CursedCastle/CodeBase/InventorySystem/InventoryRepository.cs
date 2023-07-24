@@ -17,14 +17,5 @@ namespace CursedCastle.CodeBase.InventorySystem
             _items.Remove(item);
         }
 
-        public void SelectItem(IItem itemBase)
-        {
-            
-        }
-
-        public void DeselectItem(IItem itemBase)
-        {
-        }
-
     }
 }

@@ -74,8 +74,8 @@ namespace CursedCastle.CodeBase.Factories
         {
             LootStaticData lootStaticData = _staticDataService.ForLoot(lootTypeID);
             GameObject prefab = lootStaticData.prefab;
-            GameObject loot = Object.Instantiate(prefab);
-            loot.transform.position = transform.position;
+            GameObject loot = Object.Instantiate(prefab, transform);
+            //loot.transform.position = transform.position;
             return loot;
         }
     }

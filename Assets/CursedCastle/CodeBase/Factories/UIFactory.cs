@@ -36,6 +36,7 @@ namespace CursedCastle.CodeBase.Factories
             GameObject itemPref = Resources.Load<GameObject>(ITEM_PATH);
             GameObject instantiate = Object.Instantiate(itemPref, inventoryUi.PlaceForItems);
             InventoryItemUI inventoryItemUI = instantiate.GetComponentInParent<InventoryItemUI>();
+            
             inventoryItemUI.Construct(item, loot.Sprite, inventoryUi);
         }
         

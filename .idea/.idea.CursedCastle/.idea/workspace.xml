@@ -5,22 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="020a9fbc-c8e6-48b0-8029-e4ffede58188" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.CursedCastle/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CursedCastle/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CursedCastle/Animations/New Animator Controller.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CursedCastle/Animations/New Animator Controller.controller" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CursedCastle/CodeBase/Character/Interaction/Interacting.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CursedCastle/CodeBase/Factories/GameFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CursedCastle/CodeBase/Factories/GameFactory.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CursedCastle/CodeBase/InventorySystem/IItem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CursedCastle/CodeBase/InventorySystem/IItem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CursedCastle/CodeBase/Factories/UIFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CursedCastle/CodeBase/Factories/UIFactory.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/CursedCastle/CodeBase/InventorySystem/InventoryService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CursedCastle/CodeBase/InventorySystem/InventoryService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CursedCastle/CodeBase/InventorySystem/RepositoryItem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CursedCastle/CodeBase/InventorySystem/RepositoryItem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CursedCastle/CodeBase/InventorySystem/UseButton.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CursedCastle/CodeBase/InventorySystem/UseButton.cs.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/CursedCastle/CodeBase/UI/Inventory/InventoryItemUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CursedCastle/CodeBase/UI/Inventory/InventoryItemUI.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CursedCastle/Prefab/Key.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CursedCastle/Prefab/Key.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CursedCastle/Resources/Character.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CursedCastle/Resources/Character.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CursedCastle/Resources/UI/Item.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CursedCastle/Resources/UI/Item.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CursedCastle/Scenes/New Scene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CursedCastle/Scenes/New Scene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/CurrentMaximizeLayout.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/CurrentMaximizeLayout.dwlt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2022.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2022.dwlt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CursedCastle/Resources/UI/Inventory.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CursedCastle/Resources/UI/Inventory.prefab" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,7 +52,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "XThreadsFramesViewSplitterKey": "0.48995364",
+    "XThreadsFramesViewSplitterKey": "0.47247708",
     "git-widget-placeholder": "Development",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -143,7 +133,7 @@
       <workItem from="1688103378823" duration="13524000" />
       <workItem from="1688655441116" duration="5976000" />
       <workItem from="1688717176622" duration="15192000" />
-      <workItem from="1690158510925" duration="12228000" />
+      <workItem from="1690158510925" duration="15637000" />
     </task>
     <servers />
   </component>
@@ -154,5 +144,37 @@
   <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/CursedCastle/CodeBase/UI/Inventory/InventoryItemUI.cs</url>
+          <line>25</line>
+          <properties documentPath="$PROJECT_DIR$/Assets/CursedCastle/CodeBase/UI/Inventory/InventoryItemUI.cs" initialLine="25" containingFunctionPresentation="method 'Construct'">
+            <startOffsets>
+              <option value="873" />
+            </startOffsets>
+            <endOffsets>
+              <option value="874" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/CursedCastle/CodeBase/UI/Inventory/InventoryItemUI.cs</url>
+          <line>51</line>
+          <properties documentPath="$PROJECT_DIR$/Assets/CursedCastle/CodeBase/UI/Inventory/InventoryItemUI.cs" initialLine="51" containingFunctionPresentation="method 'SelectItem'">
+            <startOffsets>
+              <option value="1480" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1509" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

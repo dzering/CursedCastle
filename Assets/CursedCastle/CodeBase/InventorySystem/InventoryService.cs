@@ -11,8 +11,9 @@ namespace CursedCastle.CodeBase.InventorySystem
     public class InventoryService : MonoBehaviour
     {
         [SerializeField] private Transform _placeForUsedItem;
-        
         [HideInInspector] public InventoryUi InventoryUi;
+       
+        public IItem SelectedItem;
         private IInventoryRepository _repository;
         private IInput _input;
         private ICharacterInteraction _characterInteraction;
@@ -24,6 +25,7 @@ namespace CursedCastle.CodeBase.InventorySystem
         private GameFactory _gameFactory;
         private AllServices _services;
         private ICursor _cursor;
+        private GameObject _usingItem;
 
         public void Construct(GameFactory gameFactory, IUIFactory uiFactory, IInput input, ICursor cursor)
         {
@@ -56,14 +58,21 @@ namespace CursedCastle.CodeBase.InventorySystem
             Destroy(selectedItem.gameObject);
         }
 
-        public void UseItem()
+        public void UseItem(IItem itemUI)
         {
-            InventoryItemUI selectedItem = InventoryUi.SelectedItem;
-            if(selectedItem==null)
+            if(itemUI == null)
                 return;
             
-            var loot = CreateSelectedItemInWorld(selectedItem);
-            SetInteractingValueForCharacter(loot);
+            _usingItem = CreateSelectedItemInWorld(itemUI);
+            SetInteractingValueForCharacter(_usingItem);
+        }
+
+        public void UnUseItem()
+        {
+            if(_usingItem==null)
+                return;
+            
+            GameObject.Destroy(_usingItem);
         }
 
         private void SetInteractingValueForCharacter(GameObject loot)
@@ -76,10 +85,10 @@ namespace CursedCastle.CodeBase.InventorySystem
             _characterInteraction.SetInteractingValue(interacting);
         }
 
-        private GameObject CreateSelectedItemInWorld(InventoryItemUI selectedItem)
+        private GameObject CreateSelectedItemInWorld(IItem selectedItem)
         {
-            InventoryItemUI item = selectedItem;
-            LootTypeID lootTypeID = item.Item.LootTypeID;
+            IItem item = selectedItem;
+            LootTypeID lootTypeID = selectedItem.LootTypeID;
             var loot = _gameFactory.CreateLoot(lootTypeID, _placeForUsedItem);
             return loot;
         }

@@ -20,16 +20,14 @@ namespace CursedCastle.CodeBase.UI.Inventory
         [SerializeField] private Color _selectedColor;
 
         private InventoryUi _inventoryUi;
+        private InventoryService _service;
 
-        private void Start()
-        {
-        }
-
-        public void Construct(IItem item, Sprite sprite, InventoryUi inventoryUi)
+        public void Construct(IItem item, Sprite sprite, InventoryUi inventoryUi, InventoryService service)
         {
             Item = item;
             _itemImage.sprite = sprite;
             _inventoryUi = inventoryUi;
+            _service = service;
 
             CheckSelected();
         }
@@ -51,7 +49,8 @@ namespace CursedCastle.CodeBase.UI.Inventory
                 return;
             }
 
-            _inventoryUi.SelectItem(this);
+            _service.SelectedItem = Item;
+            _service.UseItem(Item);
             _background.color = _selectedColor;
             Item.IsSelected = true;
         }
@@ -60,6 +59,8 @@ namespace CursedCastle.CodeBase.UI.Inventory
         {
             Item.IsSelected = false;
             _background.color = _defaultColor;
+            _service.SelectedItem = null;
+            _service.UnUseItem();
         }
 
         public void OnPointerEnter(PointerEventData eventData)

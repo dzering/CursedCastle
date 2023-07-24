@@ -9,6 +9,7 @@ namespace CursedCastle.CodeBase.Factories
     {
         private readonly IStaticDataService _staticDataService;
         private Transform _uiRoot;
+        private InventoryService _service;
         private const string UI_HUD = "UI/HUD";
         private const string INVENTORY_PATH = "UI/Inventory";
         private const string UI_ROOT_PATH = "UI/UiRoot";
@@ -37,19 +38,18 @@ namespace CursedCastle.CodeBase.Factories
             GameObject instantiate = Object.Instantiate(itemPref, inventoryUi.PlaceForItems);
             InventoryItemUI inventoryItemUI = instantiate.GetComponentInParent<InventoryItemUI>();
             
-            inventoryItemUI.Construct(item, loot.Sprite, inventoryUi);
+            inventoryItemUI.Construct(item, loot.Sprite, inventoryUi, _service);
         }
         
         public GameObject CreateInventory(InventoryService inventoryService)
         {
+            _service ??= inventoryService;
+            
             GameObject inventoryPref = Resources.Load<GameObject>(INVENTORY_PATH);
             GameObject inventoryGo = Object.Instantiate(inventoryPref, _uiRoot);
 
             DropButton dropButton = inventoryGo.GetComponentInChildren<DropButton>();
             dropButton.Construct(inventoryService);
-
-            UseButton useButton = inventoryGo.GetComponentInChildren<UseButton>();
-            useButton.Construct(inventoryService);
 
             CloseButton closeButton = inventoryGo.GetComponentInChildren<CloseButton>();
             closeButton.Construct(inventoryService);

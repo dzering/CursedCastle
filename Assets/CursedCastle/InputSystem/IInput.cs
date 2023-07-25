@@ -9,6 +9,7 @@ namespace CursedCastle.InputSystem
         event Action OnInventoryInteraction;
         event Action OnPickUpObject;
         event Action OnUseAction;
+        event Action OnCrouchToggle;
         Vector2 Look { get; }
         void OnMove(InputValue value);
         void OnLook(InputValue value);
@@ -17,5 +18,6 @@ namespace CursedCastle.InputSystem
         void OnInventory();
         void OnPickUp();
         void OnInteract();
+        void OnCrouch();
     }
 }

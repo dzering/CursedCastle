@@ -1,10 +1,7 @@
-using System;
 using CursedCastle.CodeBase.InventorySystem;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
-using UnityEngine.Serialization;
 
 namespace CursedCastle.CodeBase.UI.Inventory
 {

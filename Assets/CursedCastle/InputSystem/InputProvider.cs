@@ -9,6 +9,7 @@ namespace CursedCastle.InputSystem
 		public event Action OnInventoryInteraction;
 		public event Action OnPickUpObject;
 		public event Action OnUseAction;
+		public event Action OnCrouchToggle;
 
 		[Header("Character Input Values")]
 		public Vector2 move;
@@ -53,6 +54,9 @@ namespace CursedCastle.InputSystem
 			OnPickUpObject?.Invoke();
 		public void OnInteract() => 
 			OnUseAction?.Invoke();
+
+		public void OnCrouch() => 
+			OnCrouchToggle?.Invoke();
 #endif
 
 

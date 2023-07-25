@@ -1,9 +1,5 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using CursedCastle.CodeBase.Infrastructure;
 using CursedCastle.InputSystem;
-using Unity.Collections;
 using UnityEngine;
 
 public class TestAnim : MonoBehaviour

@@ -7,7 +7,7 @@ namespace CursedCastle.CodeBase.UI.Inventory
 {
     public class InventoryItemUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
     {
-        [HideInInspector] public IItem Item;
+        public IItem Item;
         [SerializeField] private Image _background;
         [SerializeField] private Image _itemImage;
         [SerializeField] private Image _hovered;
@@ -26,10 +26,19 @@ namespace CursedCastle.CodeBase.UI.Inventory
             _inventoryUi = inventoryUi;
             _service = service;
 
-            CheckSelected();
+            CheckSelection();
         }
 
-        private void CheckSelected()
+        public void OnPointerEnter(PointerEventData eventData) => 
+            _hovered.gameObject.SetActive(true);
+
+        public void OnPointerExit(PointerEventData eventData) => 
+            _hovered.gameObject.SetActive(false);
+
+        public void OnPointerClick(PointerEventData eventData) => 
+            SelectItem();
+
+        private void CheckSelection()
         {
             _hovered.gameObject.SetActive(false);
             _background.color = _defaultColor;
@@ -45,34 +54,23 @@ namespace CursedCastle.CodeBase.UI.Inventory
                 DeselectItem();
                 return;
             }
-
+            
+            _inventoryUi.DeselectItems();
             _service.SelectedItem = Item;
             _service.UseItem(Item);
-            _background.color = _selectedColor;
+            SetBackgroundColor(_selectedColor);
             Item.IsSelected = true;
         }
 
-        private void DeselectItem()
+        public void DeselectItem()
         {
             Item.IsSelected = false;
-            _background.color = _defaultColor;
+            SetBackgroundColor(_defaultColor);
             _service.SelectedItem = null;
             _service.UnUseItem();
         }
 
-        public void OnPointerEnter(PointerEventData eventData)
-        {
-            _hovered.gameObject.SetActive(true);
-        }
-
-        public void OnPointerExit(PointerEventData eventData)
-        {
-            _hovered.gameObject.SetActive(false);
-        }
-
-        public void OnPointerClick(PointerEventData eventData)
-        {
-            SelectItem();
-        }
+        private void SetBackgroundColor(Color color) => 
+            _background.color = color;
     }
 }

@@ -26,6 +26,8 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/11d96bdf44c64aa8ac23954615a5cb7f27000/61/10f94f17/Animator.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9ddbf661b4c64309bf8af82db21fa7dc860800/f2/b505dca7/Editor.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/CursedCastle/CodeBase/Factories/GameFactory.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/CursedCastle/CodeBase/Factories/UIFactory.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/CursedCastle/CodeBase/GameBootstrapper.cs" root0="FORCE_HIGHLIGHTING" />
@@ -138,7 +140,7 @@
       <workItem from="1688103378823" duration="13524000" />
       <workItem from="1688655441116" duration="5976000" />
       <workItem from="1688717176622" duration="15192000" />
-      <workItem from="1690158510925" duration="19392000" />
+      <workItem from="1690158510925" duration="20786000" />
     </task>
     <servers />
   </component>

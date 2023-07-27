@@ -8,7 +8,7 @@ namespace CursedCastle.CodeBase.Character
 {
     public class PickUpLootAbility : MonoBehaviour
     {
-        [SerializeField] private InventoryService inventory;
+        [SerializeField] private Inventory inventory;
         [SerializeField] private SelectableValue selectableValue;
         private IInputService _input;
 

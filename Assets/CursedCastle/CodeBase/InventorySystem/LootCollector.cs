@@ -5,10 +5,10 @@ namespace CursedCastle.CodeBase.InventorySystem
 {
     public class LootCollector : MonoBehaviour
     {
-        private InventoryService _inventory;
+        private Inventory _inventory;
 
         public void Start() => 
-            _inventory = GetComponentInParent<InventoryService>();
+            _inventory = GetComponentInParent<Inventory>();
 
         private void OnTriggerEnter(Collider other)
         {

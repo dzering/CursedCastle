@@ -1,12 +1,17 @@
+using System;
 using CursedCastle.CodeBase.InventorySystem;
+using UnityEditor;
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
-namespace CursedCastle.CodeBase.UI.Inventory
+namespace CursedCastle.CodeBase.UI.InventoryUI
 {
     public class InventoryItemUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
     {
+        public Action<InventoryItemUI> OnSelect;
+        public Action<InventoryItemUI> OnDeselect;
+
         public IItem Item;
         [SerializeField] private Image _background;
         [SerializeField] private Image _itemImage;
@@ -16,17 +21,19 @@ namespace CursedCastle.CodeBase.UI.Inventory
 
         [SerializeField] private Color _selectedColor;
 
-        private InventoryUi _inventoryUi;
-        private InventoryService _service;
-
-        public void Construct(IItem item, Sprite sprite, InventoryUi inventoryUi, InventoryService service)
+        public void Construct(IItem item, Sprite sprite)
         {
             Item = item;
             _itemImage.sprite = sprite;
-            _inventoryUi = inventoryUi;
-            _service = service;
 
             CheckSelection();
+        }
+
+        public void DeselectItem()
+        {
+            Item.IsSelected = false;
+            OnDeselect?.Invoke(this);
+            SetBackgroundColor(_defaultColor);
         }
 
         public void OnPointerEnter(PointerEventData eventData) => 
@@ -54,20 +61,10 @@ namespace CursedCastle.CodeBase.UI.Inventory
                 DeselectItem();
                 return;
             }
-            
-            _inventoryUi.DeselectItems();
-            _service.SelectedItem = Item;
-            _service.UseItem(Item);
-            SetBackgroundColor(_selectedColor);
-            Item.IsSelected = true;
-        }
 
-        public void DeselectItem()
-        {
-            Item.IsSelected = false;
-            SetBackgroundColor(_defaultColor);
-            _service.SelectedItem = null;
-            _service.UnUseItem();
+            OnSelect?.Invoke(this);
+            Item.IsSelected = true;
+            SetBackgroundColor(_selectedColor);
         }
 
         private void SetBackgroundColor(Color color) => 

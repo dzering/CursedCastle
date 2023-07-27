@@ -48,8 +48,8 @@ namespace CursedCastle.CodeBase.Factories
             PlayerRotation rotation = character.GetComponent<PlayerRotation>();
             rotation.Construct(_inputService.InputProvider);
 
-            InventoryService inventoryService = character.GetComponentInChildren<InventoryService>();
-            inventoryService.Construct(this, _uiFactory, _inputService.InputProvider, _cursor);
+            Inventory inventory = character.GetComponentInChildren<Inventory>();
+            inventory.Construct(this, _uiFactory, _inputService.InputProvider, _cursor);
 
             PickUpLootAbility pickUpLootAbility = character.GetComponentInParent<PickUpLootAbility>();
             pickUpLootAbility.Construct(_inputService);

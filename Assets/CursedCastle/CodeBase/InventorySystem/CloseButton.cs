@@ -6,11 +6,11 @@ namespace CursedCastle.CodeBase.InventorySystem
     public class CloseButton : MonoBehaviour
     {
         [SerializeField] private Button closeButton;
-        private InventoryService _inventoryService;
+        private Inventory _inventory;
 
-        public void Construct(InventoryService inventoryService)
+        public void Construct(Inventory inventory)
         {
-            _inventoryService = inventoryService;
+            _inventory = inventory;
             OnAwake();
         }
 
@@ -18,6 +18,6 @@ namespace CursedCastle.CodeBase.InventorySystem
             closeButton.onClick.AddListener(Close);
 
         private void Close() => 
-            _inventoryService.Close();
+            _inventory.Close();
     }
 }

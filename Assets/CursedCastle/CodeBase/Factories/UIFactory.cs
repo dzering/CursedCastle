@@ -1,6 +1,6 @@
 using CursedCastle.CodeBase.InventorySystem;
 using CursedCastle.CodeBase.StaticData;
-using CursedCastle.CodeBase.UI.Inventory;
+using CursedCastle.CodeBase.UI.InventoryUI;
 using UnityEngine;
 
 namespace CursedCastle.CodeBase.Factories
@@ -9,7 +9,7 @@ namespace CursedCastle.CodeBase.Factories
     {
         private readonly IStaticDataService _staticDataService;
         private Transform _uiRoot;
-        private InventoryService _service;
+        private Inventory _service;
         private const string UI_HUD = "UI/HUD";
         private const string INVENTORY_PATH = "UI/Inventory";
         private const string UI_ROOT_PATH = "UI/UiRoot";
@@ -31,29 +31,30 @@ namespace CursedCastle.CodeBase.Factories
            
         }
 
-        public void CreateInventoryItem(IItem item, InventoryUi inventoryUi)
+        public InventoryItemUI CreateInventoryItem(IItem item, Transform placeForItemUI)
         {
             LootStaticData loot = _staticDataService.ForLoot(item.LootTypeID);
             GameObject itemPref = Resources.Load<GameObject>(ITEM_PATH);
-            GameObject instantiate = Object.Instantiate(itemPref, inventoryUi.PlaceForItems);
+            GameObject instantiate = Object.Instantiate(itemPref, placeForItemUI);
             InventoryItemUI inventoryItemUI = instantiate.GetComponentInParent<InventoryItemUI>();
+            
+            inventoryItemUI.Construct(item, loot.Sprite);
 
-            inventoryUi.AddItem(inventoryItemUI);
-            inventoryItemUI.Construct(item, loot.Sprite, inventoryUi, _service);
+            return inventoryItemUI;
         }
         
-        public GameObject CreateInventory(InventoryService inventoryService)
+        public GameObject CreateInventory(Inventory inventory)
         {
-            _service ??= inventoryService;
+            _service ??= inventory;
             
             GameObject inventoryPref = Resources.Load<GameObject>(INVENTORY_PATH);
             GameObject inventoryGo = Object.Instantiate(inventoryPref, _uiRoot);
 
             DropButton dropButton = inventoryGo.GetComponentInChildren<DropButton>();
-            dropButton.Construct(inventoryService);
+            dropButton.Construct(inventory);
 
             CloseButton closeButton = inventoryGo.GetComponentInChildren<CloseButton>();
-            closeButton.Construct(inventoryService);
+            closeButton.Construct(inventory);
             
             return inventoryGo;
         }

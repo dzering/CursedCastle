@@ -2,13 +2,13 @@ using CursedCastle.CodeBase.Character.Interaction;
 using CursedCastle.CodeBase.Factories;
 using CursedCastle.CodeBase.Infrastructure;
 using CursedCastle.CodeBase.Loot;
-using CursedCastle.CodeBase.UI.Inventory;
+using CursedCastle.CodeBase.UI.InventoryUI;
 using CursedCastle.InputSystem;
 using UnityEngine;
 
 namespace CursedCastle.CodeBase.InventorySystem
 {
-    public class InventoryService : MonoBehaviour
+    public class Inventory : MonoBehaviour
     {
         [SerializeField] private Transform _placeForUsedItem;
         [HideInInspector] public InventoryUi InventoryUi;
@@ -43,19 +43,39 @@ namespace CursedCastle.CodeBase.InventorySystem
             _characterInteraction = GetComponent<CharacterInteraction>();
         }
 
-        private void OnDestroy() => 
-            _input.OnInventoryInteraction -= UseInventory;
+        public void Close()
+        {
+            Destroy(_inventory);
+            _isOpen = false;
+            
+            _cursor.OnUIFocus(_isOpen);
+        }
 
         public void AddItem(IItem item) => 
             _repository.AddItem(item);
 
-        public void DropItem()
+        public void RemoveItem()
+        {
+            // Create item in the world
+            // Remove from repository
+            // Update inventory UI
+            if(InventoryUi.SelectedItem == null)
+                return;
+
+            InventoryItemUI selectedItem = CreateItemInWorld();
+
+            _repository.RemoveItem(selectedItem.Item);
+
+            InventoryUi.UpdateUI(_repository);
+        }
+
+        private InventoryItemUI CreateItemInWorld()
         {
             InventoryItemUI selectedItem = InventoryUi.SelectedItem;
-            _repository.RemoveItem(selectedItem.Item);
             LootTypeID lootTypeID = selectedItem.Item.LootTypeID;
             _gameFactory.CreateLoot(lootTypeID, transform);
-            Destroy(selectedItem.gameObject);
+            
+            return selectedItem;
         }
 
         public void UseItem(IItem itemUI)
@@ -63,16 +83,19 @@ namespace CursedCastle.CodeBase.InventorySystem
             if(itemUI == null)
                 return;
             
-            _usingItem = CreateSelectedItemInWorld(itemUI);
+            _usingItem = CreateSelectedItemInWorld(itemUI.LootTypeID, _placeForUsedItem);
             SetInteractingValueForCharacter(_usingItem);
         }
 
-        public void UnUseItem()
+        private void OnDestroy() => 
+            _input.OnInventoryInteraction -= UseInventory;
+
+        public void CancelUseItem()
         {
-            if(_usingItem==null)
+            if(_usingItem == null)
                 return;
             
-            GameObject.Destroy(_usingItem);
+            Destroy(_usingItem);
         }
 
         private void SetInteractingValueForCharacter(GameObject loot)
@@ -85,11 +108,9 @@ namespace CursedCastle.CodeBase.InventorySystem
             _characterInteraction.SetInteractingValue(interacting);
         }
 
-        private GameObject CreateSelectedItemInWorld(IItem selectedItem)
+        private GameObject CreateSelectedItemInWorld(LootTypeID lootTypeID, Transform placeForObject)
         {
-            IItem item = selectedItem;
-            LootTypeID lootTypeID = selectedItem.LootTypeID;
-            var loot = _gameFactory.CreateLoot(lootTypeID, _placeForUsedItem);
+            var loot = _gameFactory.CreateLoot(lootTypeID, placeForObject);
             return loot;
         }
 
@@ -109,30 +130,27 @@ namespace CursedCastle.CodeBase.InventorySystem
             _isOpen = true;
             _inventory = _uiFactory.CreateInventory(this);
             InventoryUi = _inventory.GetComponent<InventoryUi>();
-            Transform uiPlaceForItems = InventoryUi.PlaceForItems;
-            CreateItems(_repository, uiPlaceForItems);
+            InventoryUi.Construct(this, _uiFactory);
+            // Transform uiPlaceForItems = InventoryUi.PlaceForItems;
+            // CreateItems(_repository, uiPlaceForItems);
+            InventoryUi.UpdateUI(_repository);
             
             _cursor.OnUIFocus(_isOpen);
         }
 
-        public void Close()
-        {
-            Destroy(_inventory);
-            _isOpen = false;
-            
-            _cursor.OnUIFocus(_isOpen);
-        }
-
-        private void CreateItems(IInventoryRepository repository, Transform placeForItems)
-        {
-            if(_repository.Items.Count == 0)
-                return;
-            
-            foreach (var item in _repository.Items)
-                CreateItem(item, placeForItems);
-        }
-
-        private void CreateItem(IItem item, Transform placeForItem) => 
-            _uiFactory.CreateInventoryItem(item, InventoryUi);
+        // private void CreateItems(IInventoryRepository repository, Transform placeForItems)
+        // {
+        //     if(repository.Items.Count == 0)
+        //         return;
+        //     
+        //     foreach (var item in _repository.Items)
+        //         CreateItem(item, placeForItems);
+        // }
+        //
+        // private void CreateItem(IItem item, Transform placeForItem)
+        // {
+        //     InventoryItemUI itemUI = _uiFactory.CreateInventoryItem(item, placeForItem);
+        //     InventoryUi.AddItem(itemUI);
+        // }
     }
 }

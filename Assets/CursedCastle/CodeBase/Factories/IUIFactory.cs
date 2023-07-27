@@ -1,15 +1,15 @@
 using CursedCastle.CodeBase.Infrastructure;
 using CursedCastle.CodeBase.InventorySystem;
-using CursedCastle.CodeBase.UI.Inventory;
+using CursedCastle.CodeBase.UI.InventoryUI;
 using UnityEngine;
 
 namespace CursedCastle.CodeBase.Factories
 {
     public interface IUIFactory : IService
     {
-        GameObject CreateInventory(InventoryService inventoryService);
+        GameObject CreateInventory(Inventory inventory);
         void CreateUiRoot();
-        void CreateInventoryItem(IItem item, InventoryUi inventoryUi);
+        InventoryItemUI CreateInventoryItem(IItem item, Transform placeForItemUI);
         GameObject CreateHUD();
     }
 }

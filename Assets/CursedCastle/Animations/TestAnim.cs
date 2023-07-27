@@ -2,28 +2,31 @@ using CursedCastle.CodeBase.Infrastructure;
 using CursedCastle.InputSystem;
 using UnityEngine;
 
-public class TestAnim : MonoBehaviour
+namespace CursedCastle.Animations
 {
-    [SerializeField] private Animator _animator;
-    private InputProvider inputProvider;
-    private bool isActive;
-
-    private void Start()
+    public class TestAnim : MonoBehaviour
     {
-        inputProvider = AllServices.Container.Single<IInputService>().InputProvider;
-        inputProvider.OnUseAction += ButtonAction;
-        isActive = false;
-    }
+        [SerializeField] private Animator _animator;
+        private InputProvider inputProvider;
+        private bool isActive;
 
-    private void ButtonAction()
-    {
-        SwitchAnimation(isActive);
-        isActive = !isActive;
-    }
+        private void Start()
+        {
+            inputProvider = AllServices.Container.Single<IInputService>().InputProvider;
+            inputProvider.OnUseAction += ButtonAction;
+            isActive = false;
+        }
 
-    private void SwitchAnimation(bool isActive)
-    {
-        _animator.SetBool("Color", isActive);
-        _animator.SetBool("Vertical", !isActive);
+        private void ButtonAction()
+        {
+            SwitchAnimation(isActive);
+            isActive = !isActive;
+        }
+
+        private void SwitchAnimation(bool isActive)
+        {
+            _animator.SetBool("Color", isActive);
+            _animator.SetBool("Vertical", !isActive);
+        }
     }
 }

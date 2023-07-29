@@ -6,10 +6,10 @@ namespace CursedCastle.CodeBase
     public class PlayerRotation : MonoBehaviour
     {
         private float _yaw;
-        private InputProvider _inputProvider;
+        private IInput _inputProvider;
         private readonly float _deltaTimeMultiplier = 1f;
 
-        public void Construct(InputProvider inputProvider)
+        public void Construct(IInput inputProvider)
         {
             _inputProvider = inputProvider;
         }

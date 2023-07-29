@@ -56,16 +56,11 @@ namespace CursedCastle.CodeBase.InventorySystem
 
         public void RemoveItem()
         {
-            // Create item in the world
-            // Remove from repository
-            // Update inventory UI
             if(InventoryUi.SelectedItem == null)
                 return;
 
             InventoryItemUI selectedItem = CreateItemInWorld();
-
             _repository.RemoveItem(selectedItem.Item);
-
             InventoryUi.UpdateUI(_repository);
         }
 
@@ -120,37 +115,21 @@ namespace CursedCastle.CodeBase.InventorySystem
                 Open();
             else
                 Close();
+            _input.OnFocusUI(_isOpen);
         }
 
         private void Open()
         {
             if(_inventory != null)
                 return;
-
+            
             _isOpen = true;
             _inventory = _uiFactory.CreateInventory(this);
             InventoryUi = _inventory.GetComponent<InventoryUi>();
             InventoryUi.Construct(this, _uiFactory);
-            // Transform uiPlaceForItems = InventoryUi.PlaceForItems;
-            // CreateItems(_repository, uiPlaceForItems);
             InventoryUi.UpdateUI(_repository);
             
             _cursor.OnUIFocus(_isOpen);
         }
-
-        // private void CreateItems(IInventoryRepository repository, Transform placeForItems)
-        // {
-        //     if(repository.Items.Count == 0)
-        //         return;
-        //     
-        //     foreach (var item in _repository.Items)
-        //         CreateItem(item, placeForItems);
-        // }
-        //
-        // private void CreateItem(IItem item, Transform placeForItem)
-        // {
-        //     InventoryItemUI itemUI = _uiFactory.CreateInventoryItem(item, placeForItem);
-        //     InventoryUi.AddItem(itemUI);
-        // }
     }
 }

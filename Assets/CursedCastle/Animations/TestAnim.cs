@@ -7,7 +7,7 @@ namespace CursedCastle.Animations
     public class TestAnim : MonoBehaviour
     {
         [SerializeField] private Animator _animator;
-        private InputProvider inputProvider;
+        private IInput inputProvider;
         private bool isActive;
 
         private void Start()

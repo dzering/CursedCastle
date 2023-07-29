@@ -5,24 +5,40 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="020a9fbc-c8e6-48b0-8029-e4ffede58188" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/CursedCastle/CodeBase/Character/AttackSystem.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/CursedCastle/CodeBase/Character/AttackSystem/Damageable.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/CursedCastle/CodeBase/Character/AttackSystem/Damageable.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/CursedCastle/CodeBase/Character/AttackSystem/PlayerCombat.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/CursedCastle/CodeBase/Character/AttackSystem/PlayerCombat.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/CursedCastle/CodeBase/Character/AttackSystem/Weapons.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/CursedCastle/CodeBase/Character/AttackSystem/Weapons/MeleeWeapon.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/CursedCastle/CodeBase/Character/AttackSystem/Weapons/MeleeWeapon.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/CursedCastle/CodeBase/Character/AttackSystem/Weapons/WeaponBase.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/CursedCastle/CodeBase/Character/AttackSystem/Weapons/WeaponBase.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.CursedCastle/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CursedCastle/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/CursedCastle/Animations/TestAnim.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CursedCastle/Animations/TestAnim.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CursedCastle/CodeBase/Character/PickUpLootAbility.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CursedCastle/CodeBase/Character/PickUpLootAbility.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CursedCastle/CodeBase/Factories/GameFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CursedCastle/CodeBase/Factories/GameFactory.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CursedCastle/CodeBase/Factories/IUIFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CursedCastle/CodeBase/Factories/IUIFactory.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CursedCastle/CodeBase/Factories/UIFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CursedCastle/CodeBase/Factories/UIFactory.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CursedCastle/CodeBase/InventorySystem/CloseButton.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CursedCastle/CodeBase/InventorySystem/CloseButton.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CursedCastle/CodeBase/InventorySystem/DropButton.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CursedCastle/CodeBase/InventorySystem/DropButton.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CursedCastle/CodeBase/InventorySystem/InventoryService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CursedCastle/CodeBase/InventorySystem/Inventory.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CursedCastle/CodeBase/InventorySystem/InventoryService.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CursedCastle/CodeBase/InventorySystem/Inventory.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CursedCastle/CodeBase/InventorySystem/LootCollector.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CursedCastle/CodeBase/InventorySystem/LootCollector.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CursedCastle/CodeBase/UI/Inventory.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CursedCastle/CodeBase/UI/InventoryUI.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CursedCastle/CodeBase/UI/Inventory/IInventoryUi.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CursedCastle/CodeBase/UI/InventoryUI/IInventoryUi.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CursedCastle/CodeBase/UI/Inventory/IInventoryUi.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CursedCastle/CodeBase/UI/InventoryUI/IInventoryUi.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CursedCastle/CodeBase/UI/Inventory/InventoryItemUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CursedCastle/CodeBase/UI/InventoryUI/InventoryItemUI.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CursedCastle/CodeBase/UI/Inventory/InventoryItemUI.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CursedCastle/CodeBase/UI/InventoryUI/InventoryItemUI.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CursedCastle/CodeBase/UI/Inventory/InventoryUi.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CursedCastle/CodeBase/UI/InventoryUI/InventoryUi.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CursedCastle/CodeBase/UI/Inventory/InventoryUi.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CursedCastle/CodeBase/UI/InventoryUI/InventoryUi.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CursedCastle/CodeBase/InventorySystem/Inventory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CursedCastle/CodeBase/InventorySystem/Inventory.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CursedCastle/CodeBase/Loot/LootTypeID.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CursedCastle/CodeBase/Loot/LootTypeID.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CursedCastle/CodeBase/PlayerRotation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CursedCastle/CodeBase/PlayerRotation.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CursedCastle/InputSystem/IInput.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CursedCastle/InputSystem/IInput.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CursedCastle/InputSystem/InputProvider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CursedCastle/InputSystem/InputProvider.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CursedCastle/InputSystem/StarterAssets.inputactions" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CursedCastle/InputSystem/StarterAssets.inputactions" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CursedCastle/Resources/Character.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CursedCastle/Resources/Character.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CursedCastle/Resources/Character_default.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CursedCastle/Resources/Character_default.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CursedCastle/Scenes/New Scene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CursedCastle/Scenes/New Scene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StarterAssets/ThirdPersonController/Character/Animations/Breakdance Freeze Var 2.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StarterAssets/ThirdPersonController/Character/Animations/Breakdance Freeze Var 2.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StarterAssets/ThirdPersonController/Character/Animations/Crouched Sneaking Right.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StarterAssets/ThirdPersonController/Character/Animations/Crouched Sneaking Right.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StarterAssets/ThirdPersonController/Character/Animations/Jump--InAir.anim.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StarterAssets/ThirdPersonController/Character/Animations/Jump--InAir.anim.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StarterAssets/ThirdPersonController/Character/Animations/Kneeling.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StarterAssets/ThirdPersonController/Character/Animations/Kneeling.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StarterAssets/ThirdPersonController/Character/Animations/Locomotion--Walk_N.anim.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StarterAssets/ThirdPersonController/Character/Animations/Locomotion--Walk_N.anim.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StarterAssets/ThirdPersonController/Character/Animations/StarterAssetsThirdPerson.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StarterAssets/ThirdPersonController/Character/Animations/StarterAssetsThirdPerson.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/CurrentMaximizeLayout.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/CurrentMaximizeLayout.dwlt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2022.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2022.dwlt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,7 +92,7 @@
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
   &quot;keyToStringList&quot;: {
@@ -122,10 +138,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="26826">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="26826" />
+      <option name="pid" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -151,7 +167,8 @@
       <workItem from="1688655441116" duration="5976000" />
       <workItem from="1688717176622" duration="15192000" />
       <workItem from="1690158510925" duration="20786000" />
-      <workItem from="1690374458959" duration="14068000" />
+      <workItem from="1690374458959" duration="22527000" />
+      <workItem from="1690598423896" duration="5597000" />
     </task>
     <servers />
   </component>
@@ -167,17 +184,17 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/CursedCastle/InputSystem/InputProvider.cs</url>
-          <line>58</line>
-          <properties documentPath="$PROJECT_DIR$/Assets/CursedCastle/InputSystem/InputProvider.cs" initialLine="58" containingFunctionPresentation="method 'OnCrouch'">
+          <url>file://$PROJECT_DIR$/Assets/CursedCastle/CodeBase/UI/InventoryUI/InventoryUi.cs</url>
+          <line>22</line>
+          <properties documentPath="$PROJECT_DIR$/Assets/CursedCastle/CodeBase/UI/InventoryUI/InventoryUi.cs" initialLine="22" containingFunctionPresentation="method 'AddItem'">
             <startOffsets>
-              <option value="1293" />
+              <option value="729" />
             </startOffsets>
             <endOffsets>
-              <option value="1317" />
+              <option value="730" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="11" />
+          <option name="timeStamp" value="19" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

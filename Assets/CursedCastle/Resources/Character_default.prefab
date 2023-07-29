@@ -2192,6 +2192,7 @@ GameObject:
   - component: {fileID: 4348895850955082987}
   - component: {fileID: 5858955547371067469}
   - component: {fileID: 6877993319054210274}
+  - component: {fileID: 4056327718990758685}
   m_Layer: 0
   m_Name: Character_default
   m_TagString: Player
@@ -2342,6 +2343,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccd61061bcaf4ff58a315c75c278e563, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _placeForUsedItem: {fileID: 0}
   InventoryUi: {fileID: 0}
 --- !u!114 &7312178483996244541
 MonoBehaviour:
@@ -2488,6 +2490,25 @@ MonoBehaviour:
   target: {fileID: 4104889733854443474}
   threshold: 0.1
   scaleDeltaTimeMultiplier: 0.5
+--- !u!114 &4056327718990758685
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6834997533139926904}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bffed5b8b3194c67a460f76abdc23701, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Animator: {fileID: 248039322512818104}
+  AttackPoint: {fileID: 4913907875554361868}
+  AttackRange: 0.2
+  LayerMasks:
+    serializedVersion: 2
+    m_Bits: 512
+  Damaging: 100
 --- !u!1 &6905982470484977067
 GameObject:
   m_ObjectHideFlags: 0

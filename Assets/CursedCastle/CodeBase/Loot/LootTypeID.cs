@@ -4,5 +4,6 @@ namespace CursedCastle.CodeBase.Loot
     {
         Flashlight = 0,
         Key = 1,
+        BaseballBat = 2,
     }
 }

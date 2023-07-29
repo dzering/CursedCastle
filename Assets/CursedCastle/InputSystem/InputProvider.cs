@@ -10,6 +10,7 @@ namespace CursedCastle.InputSystem
 		public event Action OnPickUpObject;
 		public event Action OnUseAction;
 		public event Action OnCrouchToggle;
+		public event Action OnPlayerAttack;
 
 		[Header("Character Input Values")]
 		public Vector2 move;
@@ -26,6 +27,7 @@ namespace CursedCastle.InputSystem
 		
 		public bool cursorLocked = true;
 		public bool cursorInputForLook = true;
+		private bool _hasFocusUI;
 
 
 #if ENABLE_INPUT_SYSTEM
@@ -37,7 +39,7 @@ namespace CursedCastle.InputSystem
 			if(cursorInputForLook) 
 				LookInput(value.Get<Vector2>());
 		}
-
+		
 		public void OnJump(InputValue value) => 
 			JumpInput(value.isPressed);
 
@@ -57,6 +59,14 @@ namespace CursedCastle.InputSystem
 
 		public void OnCrouch() => 
 			OnCrouchToggle?.Invoke();
+
+		public void OnAttack()
+		{
+			if(_hasFocusUI)
+				return;
+			
+			OnPlayerAttack?.Invoke();
+		}
 #endif
 
 
@@ -71,5 +81,10 @@ namespace CursedCastle.InputSystem
 
 		public void SprintInput(bool newSprintState) => 
 			sprint = newSprintState;
+
+		public void OnFocusUI(bool hasFocus)
+		{
+			_hasFocusUI = hasFocus;
+		}
 	}
 }

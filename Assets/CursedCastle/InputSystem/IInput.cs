@@ -19,5 +19,7 @@ namespace CursedCastle.InputSystem
         void OnPickUp();
         void OnInteract();
         void OnCrouch();
+        event Action OnPlayerAttack;
+        void OnFocusUI(bool hasFocus);
     }
 }

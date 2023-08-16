@@ -7,5 +7,7 @@ namespace CursedCastle.CodeBase.Logic
         Jump = 2,
         GetHit = 3,
         Die = 4,
+        Attack = 5,
+        Uncknown = 6,
     }
 }

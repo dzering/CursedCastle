@@ -1,3 +1,4 @@
+using System;
 using Cinemachine;
 using CursedCastle.CodeBase.Character;
 using CursedCastle.CodeBase.Character.Interaction;
@@ -8,6 +9,7 @@ using CursedCastle.CodeBase.StaticData;
 using CursedCastle.InputSystem;
 using StarterAssets.ThirdPersonController.Scripts;
 using UnityEngine;
+using Object = UnityEngine.Object;
 
 namespace CursedCastle.CodeBase.Factories
 {
@@ -21,6 +23,8 @@ namespace CursedCastle.CodeBase.Factories
         private const string INPUT_SYSTEM_PATH = "InputSystem";
         private const string CHARACTER_PATH = "Character";
         private const string CAMERA_PATH = "CMvcam";
+        public GameObject Player { get; private set; }
+        public event Action OnPlayerCreated;
 
         public GameObject CreateInputSystem()
         {
@@ -56,6 +60,11 @@ namespace CursedCastle.CodeBase.Factories
 
             CharacterInteraction interaction = character.GetComponentInChildren<CharacterInteraction>();
             interaction.Construct(_inputService);
+            
+            //Need to refactoring
+            Player = character;
+            Player.transform.position += new Vector3(0, 2, 0);
+            OnPlayerCreated?.Invoke();
 
             return character;
         }
@@ -69,6 +78,7 @@ namespace CursedCastle.CodeBase.Factories
             vcamera.LookAt = target.transform;
             return cameraGameObject;
         }
+
 
         public GameObject CreateLoot(LootTypeID lootTypeID, Transform transform)
         {

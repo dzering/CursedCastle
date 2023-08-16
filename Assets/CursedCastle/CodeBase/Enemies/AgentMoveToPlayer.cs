@@ -8,10 +8,10 @@ namespace CursedCastle.CodeBase.Enemies
     public class AgentMoveToPlayer : MonoBehaviour
     {
         public NavMeshAgent agent;
+        public float minDistance = 2;
         private GameObject _player;
         private IGameFactory _gameFactory;
         private bool _isTargetInit;
-        private float minDistance = 1;
 
         private void Start()
         {

@@ -23,10 +23,11 @@ namespace CursedCastle.CodeBase
 
         private void InitGameWorld()
         {
+            Transform initialPoint = GameObject.FindWithTag($"InitialPoint").transform;
             _uiFactory.CreateUiRoot();
             _uiFactory.CreateHUD();
             
-            GameObject character = _gameFactory.CreateCharacter();
+            GameObject character = _gameFactory.CreateCharacter(initialPoint);
             Transform target = character.GetComponent<HeadVerticalRotation>().target;
 
             GameObject vmCamera = _gameFactory.CreateVmCamera(target.gameObject);

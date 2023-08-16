@@ -42,10 +42,10 @@ namespace CursedCastle.CodeBase.Factories
             _cursor = cursor;
         }
 
-        public GameObject CreateCharacter()
+        public GameObject CreateCharacter(Transform initialPoint)
         {
             GameObject pref = Resources.Load<GameObject>(CHARACTER_PATH);
-            GameObject character = Object.Instantiate(pref);
+            GameObject character = Object.Instantiate(pref, initialPoint);
             ThirdPersonController controller = character.GetComponent<ThirdPersonController>();
             controller.Construct(_inputService);
 
@@ -63,7 +63,6 @@ namespace CursedCastle.CodeBase.Factories
             
             //Need to refactoring
             Player = character;
-            Player.transform.position += new Vector3(0, 2, 0);
             OnPlayerCreated?.Invoke();
 
             return character;
